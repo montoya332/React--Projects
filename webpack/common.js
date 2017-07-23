@@ -40,7 +40,6 @@ class WebpackBaseConfig {
 		return path.resolve('./test');
 	}
 	get stylesPathAbsolute() {
-		console.log('arturo:',path.resolve('../stylesheets'))
 		return path.resolve('stylesheets');
 	}
 		/* Get the default settings */
