@@ -31,9 +31,9 @@ export const PrivateRoutes = props => (
 
 export const AuthPrivateRoutes = withRouter(({ history, store, ...rest }) => {
 	const signedInUser = false;
-	const appRoutes = [<PublicRoutes {...rest} />];
+	const appRoutes = [<PublicRoutes key="public" {...rest} />];
 	if (signedInUser) {
-		appRoutes.push(<PrivateRoutes {...rest} />);
+		appRoutes.push(<PrivateRoutes key="private" {...rest} />);
 	}
 	return <App>{appRoutes}</App>;
 });

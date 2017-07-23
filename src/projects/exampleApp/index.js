@@ -9,8 +9,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import reducers from './rootReducer';
 import routes, {AppRoutes} from './indexRoute';
 import createBrowserHistory from 'history/createBrowserHistory';
-import '../../../stylesheets/main.scss';//TODO: stylesheets alias
-
+import 'stylesheets/main.scss';
+import { createMuiTheme } from 'material-ui/styles';
+const theme = createMuiTheme({
+  status: {
+    danger: 'orange',
+  },
+});
 const history = createBrowserHistory();
 
 injectTapEventPlugin();
@@ -25,7 +30,7 @@ const createStoreWithMiddleware = compose(applyMiddleware(
 const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
-	<MuiThemeProvider theme="">
+	<MuiThemeProvider theme={theme}>
 		<Provider store={store}>
 			{AppRoutes(store)}
 		</Provider>

@@ -40,7 +40,7 @@ class WebpackBaseConfig {
 		return path.resolve('./test');
 	}
 	get stylesPathAbsolute() {
-		return path.resolve('stylesheets');
+		return path.resolve('./stylesheets');
 	}
 		/* Get the default settings */
 	get defaultSettings() {
@@ -97,7 +97,7 @@ class WebpackBaseConfig {
 					)
 
 				}, {
-					test: /^.((?!cssmodule).)*\.(sass|scss)$/,
+					test: /^.((?!cssmodule).)*\.(sass|scss|css)$/,
 					loaders: [{
 						loader: 'style-loader'
 					}, {
@@ -106,7 +106,7 @@ class WebpackBaseConfig {
 						loader: 'sass-loader'
 					}]
 				}, {
-					test: /\.cssmodule\.(sass|scss)$/,
+					test: /\.cssmodule\.(sass|scss|css)$/,
 					loaders: [{
 						loader: 'style-loader'
 					}, {
@@ -123,7 +123,7 @@ class WebpackBaseConfig {
 					ReactApp: `${this.srcPathAbsolute}/`,
 					projects: `${this.srcPathAbsolute}/projects/`,
 					utils: `${this.srcPathAbsolute}/utils/`,
-					stylesheets: `${this.stylesPathAbsolute}/`//TODO: FIX stylesheets alias
+					stylesheets: `${this.stylesPathAbsolute}/`
 				},
 				extensions: ['.js', '.jsx', '.scss'],
 				modules: [

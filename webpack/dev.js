@@ -15,7 +15,7 @@ class WebpackDevConfig extends WebpackBaseConfig {
 				app: [
 					'webpack-dev-server/client?http://0.0.0.0:8000/',
 					'webpack/hot/only-dev-server',
-					'./projects/todoApp/index.js'
+					'./projects/exampleApp/index.js'
 				]
 			},
 			plugins: [
