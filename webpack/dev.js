@@ -12,10 +12,13 @@ class WebpackDevConfig extends WebpackBaseConfig {
 		this.config = {
 			devtool: 'cheap-module-source-map',
 			entry: {
-				app: [
+				exampleApp: [
+					'./projects/exampleApp/index.js'
+				],
+				algorithmApp: [
 					'webpack-dev-server/client?http://0.0.0.0:8000/',
 					'webpack/hot/only-dev-server',
-					'./projects/exampleApp/index.js'
+					'./projects/algorithmApp/index.js'
 				]
 			},
 			plugins: [
