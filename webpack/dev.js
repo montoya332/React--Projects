@@ -16,9 +16,12 @@ class WebpackDevConfig extends WebpackBaseConfig {
 					'./projects/exampleApp/index.js'
 				],
 				algorithmApp: [
+					'./projects/algorithmApp/index.js'
+				],
+				ticTacToeApp: [
 					'webpack-dev-server/client?http://0.0.0.0:8000/',
 					'webpack/hot/only-dev-server',
-					'./projects/algorithmApp/index.js'
+					'./projects/ticTacToeApp/index.js'
 				]
 			},
 			plugins: [
