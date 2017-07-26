@@ -4,6 +4,7 @@ import { Switch } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import ticTacToeContainer from './container';
 
 import {
 	BrowserRouter as Router,
@@ -14,33 +15,15 @@ import {
 
 const history = createHistory();
 
-const App = () => (<AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React App  </Typography>  </Toolbar></AppBar> );
-
-export const PublicRoutes = ({store}) => (
-	<Switch>
-		<Route path="/home" component={App} />
-		<Redirect to={{ pathname: '/home' }} />
-	</Switch>
-	);
-
-export const PrivateRoutes = props => (
-	<Switch>
-		<Route path="/home" component={App} />
-	</Switch>
-	);
-
-export const AuthPrivateRoutes = withRouter(({ history, store, ...rest }) => {
-	const signedInUser = false;
-	const appRoutes = [<PublicRoutes key="public" {...rest} />];
-	if (signedInUser) {
-		appRoutes.push(<PrivateRoutes key="private" {...rest} />);
-	}
-	return <App>{appRoutes}</App>;
-});
+const App = (props) => (<div><AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  Tic Tac Toe  App  </Typography>  </Toolbar></AppBar>{props.children}</div> );
 
 export const AppRoutes = store => (
 	<Router history={history}>
-		<AuthPrivateRoutes store={store} />
+		<App>
+			<Switch>
+				<Route path="/" component={ticTacToeContainer} />
+			</Switch>
+		</App>
 	</Router>
 );
 
