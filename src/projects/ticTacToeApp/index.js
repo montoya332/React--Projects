@@ -9,7 +9,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import reducers from './rootReducer';
 import routes, {AppRoutes} from './indexRoute';
 import createBrowserHistory from 'history/createBrowserHistory';
-import 'stylesheets/main.scss';
+import './styles.scss';
 import { createMuiTheme } from 'material-ui/styles';
 const theme = createMuiTheme({
   status: {

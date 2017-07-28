@@ -1,0 +1,15 @@
+.cell {
+	border: 1px solid black;
+	&__1, &__2, &__3 {
+		border-top-style: none;
+	}
+	&__3, &__6, &__9 {
+		border-right-style: none;
+	}
+	&__7, &__8, &__9 {
+		border-bottom-style: none;
+	}
+	&__1, &__4, &__7 {
+		border-left-style: none;
+	}
+}

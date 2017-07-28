@@ -19,20 +19,21 @@ export class MainLayoutContainer extends Component {
 		    height: 60,
 		    fontSize: '48px'
 		};
+
 		if('O' === item ){
-			return <td key={key}><PanoramaFishEye/></td>
+			return <td className={`cell cell__${key+1}`} key={key}><PanoramaFishEye/></td>
 		}
 		if('X'=== item){
-			return <td key={key}><Clear/></td>
+			return <td className={`cell cell__${key+1}`} key={key}><Clear/></td>
 		}
 
-		return <td key={key}>{item}</td>
+		return <td className={`cell cell__${key+1}`} key={key}>{item}</td>
 	}
 	renderRow(row,key){
-		return <tr key={key}>{row.map(this.renderItem)}</tr>
+		return <tr key={key}>{row.map((cell,cellKey)=>this.renderItem(cell,cellKey+key*row.length))}</tr>
 	}
 	renderBoard(){
-		const board =  _.chunk(['X','O','X','O','X','X','X','X','O'], 3);
+		const board = [['X','O','X'],['O','X','X'],['X','X','O']];
 		return (
 			<table>
 				<tbody>
