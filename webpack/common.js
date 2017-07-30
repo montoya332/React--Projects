@@ -42,6 +42,19 @@ class WebpackBaseConfig {
 	get stylesPathAbsolute() {
 		return path.resolve('./stylesheets');
 	}
+	get projectsEntryObject() {
+		return {
+				exampleApp: [
+					'./projects/exampleApp/index.js'
+				],
+				algorithmApp: [
+					'./projects/algorithmApp/index.js'
+				],
+				ticTacToeApp: [
+					'./projects/ticTacToeApp/index.js'
+				]
+			}
+	}
 		/* Get the default settings */
 	get defaultSettings() {
 		const cssModulesQuery = {

@@ -11,19 +11,7 @@ class WebpackDevConfig extends WebpackBaseConfig {
 
 		this.config = {
 			devtool: 'cheap-module-source-map',
-			entry: {
-				exampleApp: [
-					'./projects/exampleApp/index.js'
-				],
-				algorithmApp: [
-					'./projects/algorithmApp/index.js'
-				],
-				ticTacToeApp: [
-					'webpack-dev-server/client?http://0.0.0.0:8000/',
-					'webpack/hot/only-dev-server',
-					'./projects/ticTacToeApp/index.js'
-				]
-			},
+			entry: this.projectsEntryObject,
 			plugins: [
 				new ExtractTextPlugin('bundle.css'),
 				new webpack.HotModuleReplacementPlugin(),

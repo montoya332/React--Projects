@@ -11,9 +11,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
 		this.config = {
 			cache: false,
 			devtool: 'source-map',
-			entry: [
-				'./index.js'
-			],
+			entry: this.projectsEntryObject,
 			plugins: [
 				new webpack.DefinePlugin({
 					'process.env.NODE_ENV': '"production"'
