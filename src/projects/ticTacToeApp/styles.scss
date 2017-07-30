@@ -1,5 +1,10 @@
+body {
+	margin: 0px;
+}
+
 .cell {
 	border: 1px solid black;
+	min-width: 30px;
 	&__1, &__2, &__3 {
 		border-top-style: none;
 	}
