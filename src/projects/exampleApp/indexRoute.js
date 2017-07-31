@@ -4,6 +4,7 @@ import { Switch } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import Container from './container';
 
 import {
 	BrowserRouter as Router,
@@ -14,11 +15,11 @@ import {
 
 const history = createHistory();
 
-const App = () => (<AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React App  </Typography>  </Toolbar></AppBar> );
+const App = (props) => (<div><AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React Projects  </Typography>  </Toolbar></AppBar>{props.children}</div> );
 
 export const PublicRoutes = ({store}) => (
 	<Switch>
-		<Route path="/home" component={App} />
+		<Route path="/home" component={Container} />
 		<Redirect to={{ pathname: '/home' }} />
 	</Switch>
 	);

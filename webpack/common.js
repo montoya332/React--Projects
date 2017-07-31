@@ -13,6 +13,11 @@ class WebpackBaseConfig {
 
 	constructor() {
 		this._config = {};
+		this._extractSass = new ExtractTextPlugin({
+			filename: '[name].bundle.css',
+			allChunks: true,
+			disable: process.env.NODE_ENV === "development"
+		});
 	}
 		/* Get the list of included packages */
 	get includedPackages() {
@@ -111,13 +116,16 @@ class WebpackBaseConfig {
 
 				}, {
 					test: /^.((?!cssmodule).)*\.(sass|scss|css)$/,
-					loaders: [{
-						loader: 'style-loader'
-					}, {
-						loader: 'css-loader'
-					}, {
-						loader: 'sass-loader'
-					}]
+					use: this._extractSass.extract({
+						use: [{
+							loader: 'css-loader',
+							options: {sourceMap: false, importLoaders: 1, devtool: 'eval'}
+						}, {
+							loader: 'sass-loader',
+							options: {sourceMap: true}
+						}],
+						fallback: 'style-loader',
+					})
 				}, {
 					test: /\.cssmodule\.(sass|scss|css)$/,
 					loaders: [{

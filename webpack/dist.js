@@ -13,6 +13,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
 			devtool: 'source-map',
 			entry: this.projectsEntryObject,
 			plugins: [
+				this._extractSass,
 				new webpack.DefinePlugin({
 					'process.env.NODE_ENV': '"production"'
 				}),
