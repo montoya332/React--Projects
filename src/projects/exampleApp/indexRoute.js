@@ -19,8 +19,8 @@ const App = (props) => (<div><AppBar position="static"> <Toolbar> <Typography ty
 
 export const PublicRoutes = ({store}) => (
 	<Switch>
-		<Route path="/home" component={Container} />
-		<Redirect to={{ pathname: '/home' }} />
+		<Route path="/" component={Container} />
+		<Redirect to={{ pathname: '/' }} />
 	</Switch>
 	);
 
