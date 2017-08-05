@@ -52,11 +52,8 @@ class WebpackBaseConfig {
 				exampleApp: [
 					'./projects/exampleApp/index.js'
 				],
-				algorithmApp: [
-					'./projects/algorithmApp/index.js'
-				],
-				ticTacToeApp: [
-					'./projects/ticTacToeApp/index.js'
+				githubApp: [
+					'./projects/githubApp/index.js'
 				]
 			}
 	}

@@ -16,7 +16,6 @@ const theme = createMuiTheme({
     danger: 'orange',
   },
 });
-const history = createBrowserHistory();
 
 injectTapEventPlugin();
 
