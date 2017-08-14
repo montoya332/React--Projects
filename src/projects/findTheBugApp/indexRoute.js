@@ -15,7 +15,7 @@ const history = createHistory();
 export const PublicRoutes = ({store}) => (
 	<Switch>
 		<Route path="/youTube" component={youTubeContainer} />
-		<Redirect to={{ pathname: '/youTube' }} />
+		<Redirect to={{ pathname: '/' }} />
 	</Switch>
 	);
 

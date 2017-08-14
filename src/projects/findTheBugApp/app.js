@@ -8,6 +8,7 @@ import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import {withRouter} from "react-router-dom";
 
 class AppLayoutContainer extends Component {
 	constructor(props) {
@@ -18,15 +19,17 @@ class AppLayoutContainer extends Component {
 	}
 	handleToggle = () => this.setState({ openDrawer: !this.state.openDrawer })
 	handleClose = () => this.setState({ openDrawer: false })
-	handleTouchTap = (e) => {
-		debugger
+	handleTouchTap = (e,item={}) => {
+		if(item.href){
+			this.props.history.push({ pathname: item.href });
+		}
 	}
 	renderListItem = (item, index) => {
 		return (
 			<ListItem
 				key={index}
 				value={2}
-				onTouchTap={this.handleTouchTap}
+				onTouchTap={(e)=>this.handleTouchTap(e,item)}
 			>
 				<ListItemText primary={item.title}/>
 			</ListItem>
@@ -56,7 +59,7 @@ class AppLayoutContainer extends Component {
 		);
 	}
 }
-export default AppLayoutContainer;
+export default withRouter(AppLayoutContainer);
 export const list = [{
 	id: '',
 	title: 'Home',
@@ -64,16 +67,16 @@ export const list = [{
 }, {
 	id: '',
 	title: 'youtube',
-	href: '',
+	href: 'youtube',
 }, {
 	id: '',
 	title: 'booklist',
 	icon: '',
-	href: ''
+	href: 'booklist'
 }, {
 	id: '',
 	title: 'something',
 	icon: '',
-	href: ''
+	href: 'booklist'
 }];
 
