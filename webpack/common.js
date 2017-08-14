@@ -54,6 +54,9 @@ class WebpackBaseConfig {
 				],
 				githubApp: [
 					'./projects/githubApp/index.js'
+				],
+				findTheBugApp: [
+					'./projects/findTheBugApp/index.js'
 				]
 			}
 	}

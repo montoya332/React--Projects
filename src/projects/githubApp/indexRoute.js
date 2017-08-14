@@ -7,7 +7,6 @@ import Typography from 'material-ui/Typography';
 import HomeContainer from './homeContainer';
 import AlgorithmContainer from './algorithm/container';
 import ticTacToeContainer from './ticTacToe/container';
-
 import {
 	BrowserRouter as Router,
 	Route,
