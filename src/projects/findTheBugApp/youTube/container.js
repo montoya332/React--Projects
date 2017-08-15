@@ -5,12 +5,12 @@ import Grid from 'material-ui/Grid';
 import _ from 'lodash';
 
 import YTSearch from 'youtube-api-search';
-import SearchBar from './search_bar';
-import VideoList from './video_list';
-import VideoDetail from './video_detail';
+import SearchBar from './searchBar';
+import VideoList from './videoList';
+import VideoDetail from './videoDetail';
+import './styles.scss';
 
 const API_KEY = 'AIzaSyCw0thCQkqCOY99ejMgR72SFOsyqyiosoc';
-
 
 export class MainLayoutContainer extends Component {
 	static defaultProps = {};
