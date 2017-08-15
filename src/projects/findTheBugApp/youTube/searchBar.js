@@ -18,7 +18,6 @@ class SearchBar extends Component {
           id="placeholder"
           label="Search"
           InputProps={{ placeholder: 'Type something...' }}
-          helperText="Full width!!!"
           fullWidth
           margin="normal"
           onChange={event => this.handleInputChange(event.target.value)}

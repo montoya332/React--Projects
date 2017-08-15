@@ -21,15 +21,11 @@ export class MainLayoutContainer extends Component {
 			videos: [],
 			selectedVideo: null
 		};
-		this.videoSearch('computer science');
 	}
 
 	videoSearch = (term) => {
 		YTSearch({key: API_KEY, term: term}, (videos) => {
-			this.setState({
-				videos: videos,// {videos} Synthactic sugar for this.setState({ videos: videos });
-				selectedVideo: videos[0]
-			});
+			//response
 		});
 	}
 
@@ -39,11 +35,8 @@ export class MainLayoutContainer extends Component {
 			<Grid container spacing={24}>
 				<Grid item xs={12}>
 					<SearchBar onSearchTermChange={videoSearch} />
-					<VideoDetail video={this.state.selectedVideo} />
-					<VideoList
-						onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-						videos={this.state.videos} 
-					/>
+					<VideoDetail />
+					<VideoList />
 				</Grid>
 			</Grid>
 		);
