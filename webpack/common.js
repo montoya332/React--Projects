@@ -49,6 +49,9 @@ class WebpackBaseConfig {
 	}
 	get projectsEntryObject() {
 		return {
+				resume: [
+					'./resume/index.js'
+				],
 				exampleApp: [
 					'./projects/exampleApp/index.js'
 				],
@@ -136,7 +139,10 @@ class WebpackBaseConfig {
 					}, {
 						loader: 'sass-loader'
 					}]
-				}]
+				},
+				{ test: /\.jpg$/, use: [ "file-loader" ] },
+				{ test: /\.png$/, use: [ "url-loader?mimetype=image/png" ] }
+				]
 			},
 			plugins: [],
 			resolve: {

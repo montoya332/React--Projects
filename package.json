@@ -99,6 +99,7 @@
     "redux-thunk": "^2.2.0",
     "roboto-font": "^0.1.0",
     "roboto-npm-webfont": "^0.0.4",
+    "url-loader": "^0.5.9",
     "youtube-api-search": "^0.0.5"
   }
 }

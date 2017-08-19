@@ -9,4 +9,3 @@ npm-debug.log
 TEST*.xml
 coverage
 build/Release
-dist/
