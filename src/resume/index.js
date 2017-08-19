@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './styles.scss';
 
 const Location = {
-	RWC: 'Redwood City, CA',
 	SF: 'San Francisco, CA',
+	RWC: 'Redwood City, CA',
+	PA: 'Palo Alto, CA',
+	SJ: 'San Jose, CA'
 };
 
 const jobItems = [
@@ -17,8 +19,57 @@ const jobItems = [
 		faIcon: 'fa-keyboard-o',
 		details: "Planned and architected Front End technology stack (React, BackboneJS ,...)",
 	},
+	{
+		title: 'Health Metrics Systems',
+		role: 'Junior Programmer',
+		location: Location.PA,
+		startDate: 'January 2015',
+		endDate: 'July 2015',
+		faIcon: 'fa-keyboard-o',
+		details: "Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.",
+	},
+	{
+		title: 'Broadcom',
+		role: 'Intern',
+		location: Location.SJ,
+		startDate: 'May 2013',
+		endDate: 'May 2014',
+		faIcon: 'fa-keyboard-o',
+		details: "Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.",
+	},
+	{
+		title: 'NASA CIPAIR Capstone Design Project',
+		role: 'Software Research Engineer',
+		location: Location.SF,
+		startDate: 'September 2010',
+		endDate: 'June 2011',
+		faIcon: 'fa-keyboard-o',
+		details: "Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.",
+	},
 ];
-
+const educationItems = [
+	{
+	title: 'Master\'s degree, Software Engineering',
+	location: 'San Jose State University',
+	startDate: '2017',
+	endDate: 'Present',
+	faIcon: 'fa-graduation-cap'
+	},
+	{
+	title: 'Bachelor\'s degree, Computer Engineering',
+	location: 'San Jose State University',
+	startDate: '2011',
+	endDate: '2014',
+	faIcon: 'fa-graduation-cap'
+	},
+	{
+	title: 'Associate of Science (AS), Engineering',
+	location: 'Cañada College',
+	startDate: '2007',
+	endDate: '2011',
+	faIcon: 'fa-graduation-cap'
+	}
+  ];
 const projectItems = [
 	{
 	title: 'Senior Project - Q-In',
@@ -109,17 +160,17 @@ const App = React.createClass({
 								pageLine={true}
 							/>
 							<Timeline
+								title="Education"
+								headerIcon="fa-rocket"
+								items={educationItems}
+							/>
+							<Timeline
 								title="Projects"
 								headerIcon="fa-rocket"
 								items={projectItems}
 							/>
 						</div>
 						<div className="four columns">
-							<IconItems
-								title="Fluency"
-								faIcon="fa-code"
-								items={languageIconItems}
-							/>
 							<IconItems
 								title="Skills"
 								faIcon="fa-cube"
@@ -144,7 +195,7 @@ const HeroTitle = React.createClass({
 					<div className="seven columns">
 						<div className="hero-title">
 							<div className="title">{this.props.title}</div>
-							<div className="subtitle">{this.props.subtitle}</div>
+							<div className="subtitle top-spacer">{this.props.subtitle}</div>
 						</div>
 					</div>
 				</div>
