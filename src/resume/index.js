@@ -17,7 +17,7 @@ const jobItems = [
 		startDate: 'July 2015',
 		endDate: 'Present',
 		faIcon: 'fa-keyboard-o',
-		details: "Planned and architected Front End technology stack (React, BackboneJS ,...)",
+		details: 'Planned and architected Front End technology stack (React, BackboneJS ,...)'
 	},
 	{
 		title: 'Health Metrics Systems',
@@ -26,7 +26,7 @@ const jobItems = [
 		startDate: 'January 2015',
 		endDate: 'July 2015',
 		faIcon: 'fa-keyboard-o',
-		details: "Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.",
+		details: 'Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.'
 	},
 	{
 		title: 'Broadcom',
@@ -35,7 +35,7 @@ const jobItems = [
 		startDate: 'May 2013',
 		endDate: 'May 2014',
 		faIcon: 'fa-keyboard-o',
-		details: "Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.",
+		details: 'Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.'
 	},
 	{
 		title: 'NASA CIPAIR Capstone Design Project',
@@ -44,87 +44,87 @@ const jobItems = [
 		startDate: 'September 2010',
 		endDate: 'June 2011',
 		faIcon: 'fa-keyboard-o',
-		details: "Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.",
-	},
+		details: 'Developed and deployed an internal paperless Hospital follow up system saving Clinics many labor hours.'
+	}
 ];
 const educationItems = [
 	{
-	title: 'Master\'s degree, Software Engineering',
-	location: 'San Jose State University',
-	startDate: '2017',
-	endDate: 'Present',
-	faIcon: 'fa-graduation-cap'
+		title: 'Master\'s degree, Software Engineering',
+		location: 'San Jose State University',
+		startDate: '2017',
+		endDate: 'Present',
+		faIcon: 'fa-graduation-cap'
 	},
 	{
-	title: 'Bachelor\'s degree, Computer Engineering',
-	location: 'San Jose State University',
-	startDate: '2011',
-	endDate: '2014',
-	faIcon: 'fa-graduation-cap'
+		title: 'Bachelor\'s degree, Computer Engineering',
+		location: 'San Jose State University',
+		startDate: '2011',
+		endDate: '2014',
+		faIcon: 'fa-graduation-cap'
 	},
 	{
-	title: 'Associate of Science (AS), Engineering',
-	location: 'Cañada College',
-	startDate: '2007',
-	endDate: '2011',
-	faIcon: 'fa-graduation-cap'
+		title: 'Associate of Science (AS), Engineering',
+		location: 'Cañada College',
+		startDate: '2007',
+		endDate: '2011',
+		faIcon: 'fa-graduation-cap'
 	}
-  ];
+];
 const projectItems = [
 	{
-	title: 'Senior Project - Q-In',
-	location: 'Github: montoya332/Qin, montoya332/QinPhoneGap',
-	startDate: 'September 2013',
-	endDate: 'May 2014',
-	faIcon: 'fa-keyboard-o',
-	details: 'The main objective of this project is to create an automated process such that attendees at an event can check in on the fly and provide event organizers with real time analytics.',
+		title: 'Senior Project - Q-In',
+		location: 'Github: montoya332/Qin, montoya332/QinPhoneGap',
+		startDate: 'September 2013',
+		endDate: 'May 2014',
+		faIcon: 'fa-keyboard-o',
+		details: 'The main objective of this project is to create an automated process such that attendees at an event can check in on the fly and provide event organizers with real time analytics.'
 	}
-  ];
+];
 
 const languageIconItems = [
 	{
 		title: 'JS',
-		devicon: 'devicon-javascript-plain',
+		devicon: 'devicon-javascript-plain'
 	}
-  ];
+];
 
 const skillsIconItems = [
-  {
-    title: 'Node.js',
-    devicon: 'devicon-nodejs-plain',
-  },
-  {
-    title: 'React',
-    devicon: 'devicon-react-original',
-  },
-  {
-    title: 'AngularJS',
-    devicon: 'devicon-angularjs-plain',
-  },
-  {
-    title: 'CSS',
-    devicon: 'devicon-css3-plain',
-  },
-  {
-    title: 'Sass',
-    devicon: 'devicon-sass-original',
-  },
-  {
-    title: 'HTML',
-    devicon: 'devicon-html5-plain',
-  },
-  {
-    title: 'MongoDB',
-    devicon: 'devicon-mongodb-plain',
-  },
-  {
-    title: 'Postgres',
-    devicon: 'devicon-postgresql-plain',
-  }
-  ];
+	{
+		title: 'Node.js',
+		devicon: 'devicon-nodejs-plain'
+	},
+	{
+		title: 'React',
+		devicon: 'devicon-react-original'
+	},
+	{
+		title: 'AngularJS',
+		devicon: 'devicon-angularjs-plain'
+	},
+	{
+		title: 'CSS',
+		devicon: 'devicon-css3-plain'
+	},
+	{
+		title: 'Sass',
+		devicon: 'devicon-sass-original'
+	},
+	{
+		title: 'HTML',
+		devicon: 'devicon-html5-plain'
+	},
+	{
+		title: 'MongoDB',
+		devicon: 'devicon-mongodb-plain'
+	},
+	{
+		title: 'Postgres',
+		devicon: 'devicon-postgresql-plain'
+	}
+];
 
 const App = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="page">
 				<div className="container">
@@ -138,16 +138,16 @@ const App = React.createClass({
 						</div>
 						<div className="five columns contact-info">
 							<div className="inline-icon-item">
-								<i className="fa fa-mobile fa-fw"></i><span>(650) 814-7939</span>
+								<i className="fa fa-mobile fa-fw" /><span>(650) 814-7939</span>
 							</div>
 							<div className="inline-icon-item">
-								<i className="fa fa-envelope fa-fw"></i><span>montoya332@live.com</span>
+								<i className="fa fa-envelope fa-fw" /><span>montoya332@live.com</span>
 							</div>
 							<div className="inline-icon-item">
-								<i className="fa fa-github fa-fw"></i><span>github.com/montoya332</span>
+								<i className="fa fa-github fa-fw" /><span>github.com/montoya332</span>
 							</div>
 							<div className="inline-icon-item">
-								<i className="fa fa-user fa-fw"></i><span>montoya332.github.io/React--Projects</span>
+								<i className="fa fa-user fa-fw" /><span>montoya332.github.io/React--Projects</span>
 							</div>
 						</div>
 					</div>
@@ -157,7 +157,7 @@ const App = React.createClass({
 								title="The Story"
 								headerIcon="fa-clock-o"
 								items={jobItems}
-								pageLine={true}
+								pageLine
 							/>
 							<Timeline
 								title="Education"
@@ -185,12 +185,12 @@ const App = React.createClass({
 });
 
 const HeroTitle = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="hero-header">
 				<div className="row">
 					<div className="five columns avatar">
-						<img width="122" src={this.props.avatarSrc} alt="Me" className="u-max-full-width"/>
+						<img width="122" src={this.props.avatarSrc} alt="Me" className="u-max-full-width" />
 					</div>
 					<div className="seven columns">
 						<div className="hero-title">
@@ -205,7 +205,7 @@ const HeroTitle = React.createClass({
 });
 
 const Timeline = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="timeline">
 				<TimelineHeader
@@ -213,10 +213,8 @@ const Timeline = React.createClass({
 					faIcon={this.props.headerIcon}
 				/>
 				<div className="timeline-items">
-					{(this.props.pageLine) ? <div className="page-line"></div> : null}
-					{this.props.items.map(item => {
-						return <TimelineItem item={item} />
-					})}
+					{(this.props.pageLine) ? <div className="page-line" /> : null}
+					{this.props.items.map(item => <TimelineItem item={item} />)}
 				</div>
 			</div>
 		);
@@ -224,7 +222,7 @@ const Timeline = React.createClass({
 });
 
 const TimelineItem = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="row timeline-item">
 				<div className="four columns">
@@ -251,20 +249,15 @@ const TimelineItem = React.createClass({
 });
 
 const TimelineItemHeader = React.createClass({
-	render: function() {
-		let role = null;
-		if (this.props.item.role) {
-			role = (
-				<div className="item-role">
-					{this.props.item.role}
-					<span className="item-role-at"> at </span>
-				</div>
-			);
-		}
-
+	render() {
 		return (
 			<div className="item-header">
-				{role}
+				{this.props.item.role && (
+					<div className="item-role">
+						{this.props.item.role}
+						<span className="item-role-at"> at </span>
+					</div>
+				)}
 				<div className="item-title">
 					{this.props.item.title}
 				</div>
@@ -274,7 +267,7 @@ const TimelineItemHeader = React.createClass({
 });
 
 const SectionHeader = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="section-header-title">
 				{this.props.title}
@@ -284,7 +277,7 @@ const SectionHeader = React.createClass({
 });
 
 const TimelineHeader = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="row">
 				<div className="three columns">
@@ -302,14 +295,14 @@ const TimelineHeader = React.createClass({
 });
 
 const TimelineMilestoneIcon = React.createClass({
-	render: function() {
-		const stackClassName = this.props.isLarge ? "fa-stack fa-lg" : "fa-stack";
+	render() {
+		const stackClassName = this.props.isLarge ? 'fa-stack fa-lg' : 'fa-stack';
 
 		return (
 			<div className="timeline-milestone-icon">
 				<span className={stackClassName}>
-					<i className="fa fa-circle fa-stack-2x"></i>
-					<i className={`fa ${this.props.faIcon} fa-stack-1x fa-inverse`}></i>
+					<i className="fa fa-circle fa-stack-2x" />
+					<i className={`fa ${this.props.faIcon} fa-stack-1x fa-inverse`} />
 				</span>
 			</div>
 		);
@@ -317,7 +310,7 @@ const TimelineMilestoneIcon = React.createClass({
 });
 
 const IconItems = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="icon-items">
 				<SectionHeader
@@ -325,13 +318,11 @@ const IconItems = React.createClass({
 					faIcon={this.props.faIcon}
 				/>
 				<div className="row">
-					{this.props.items.map(item => {
-						return (
-							<div className="three columns">
-								<IconItem {...item} />
-							</div>
-							);
-					})}
+					{this.props.items.map(item => (
+						<div className="three columns">
+							<IconItem {...item} />
+						</div>
+					))}
 				</div>
 			</div>
 		);
@@ -339,10 +330,10 @@ const IconItems = React.createClass({
 });
 
 const IconItem = React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="icon-item">
-				<i className={`${this.props.devicon}`}></i>
+				<i className={`${this.props.devicon}`} />
 				<div className="title">{this.props.title}</div>
 			</div>
 		);
