@@ -7,23 +7,24 @@ import ReduxPromise from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import reducers from './rootReducer';
-import routes, {AppRoutes} from './indexRoute';
+import routes, { AppRoutes } from './indexRoute';
 import createBrowserHistory from 'history/createBrowserHistory';
 import 'stylesheets/main.scss';
 import { createMuiTheme } from 'material-ui/styles';
+
 const theme = createMuiTheme({
-  status: {
-    danger: 'orange',
-  },
+	status: {
+		danger: 'orange'
+	}
 });
 
 injectTapEventPlugin();
 
 const middleware = [ReduxThunk, ReduxPromise];
 const createStoreWithMiddleware = compose(applyMiddleware(
-		...middleware
-	), typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
-		? window.devToolsExtension()
+	...middleware
+), typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
+	? window.devToolsExtension()
 	: f => f)(createStore);
 
 const store = createStoreWithMiddleware(reducers);

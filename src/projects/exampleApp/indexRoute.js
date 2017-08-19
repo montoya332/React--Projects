@@ -15,20 +15,20 @@ import {
 
 const history = createHistory();
 
-const App = (props) => (<div><AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React Projects  </Typography>  </Toolbar></AppBar>{props.children}</div> );
+const App = props => (<div><AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React Projects            </Typography>            </Toolbar></AppBar>{props.children}</div>);
 
-export const PublicRoutes = ({store}) => (
+export const PublicRoutes = ({ store }) => (
 	<Switch>
 		<Route path="/" component={Container} />
 		<Redirect to={{ pathname: '/' }} />
 	</Switch>
-	);
+);
 
 export const PrivateRoutes = props => (
 	<Switch>
 		<Route path="/home" component={App} />
 	</Switch>
-	);
+);
 
 export const AuthPrivateRoutes = withRouter(({ history, store, ...rest }) => {
 	const signedInUser = false;

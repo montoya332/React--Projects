@@ -5,7 +5,6 @@ const webpack = require('webpack');
 const WebpackBaseConfig = require('./common');
 
 class WebpackDistConfig extends WebpackBaseConfig {
-
 	constructor() {
 		super();
 		this.config = {
@@ -22,11 +21,11 @@ class WebpackDistConfig extends WebpackBaseConfig {
 			]
 		};
 
-    // Deactivate hot-reloading if we run dist build on the dev server
+		// Deactivate hot-reloading if we run dist build on the dev server
 		this.config.devServer.hot = false;
 	}
 
-  /**
+	/**
    * Get the environment name
    * @return {String} The current environment
    */

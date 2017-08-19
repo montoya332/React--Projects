@@ -3,44 +3,45 @@ const PORT = 8081;
 const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
+
 const assetPath = '/assets/';
 const absolutePath = path.join(__dirname, 'build', assetPath);
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const npmBase = path.join(__dirname, '../node_modules');
 const projectsBase = path.join(__dirname, '../src/projects');
 
 class WebpackBaseConfig {
-
 	constructor() {
 		this._config = {};
 		this._extractSass = new ExtractTextPlugin({
 			filename: '[name].bundle.css',
 			allChunks: true,
-			disable: process.env.NODE_ENV === "development"
+			disable: process.env.NODE_ENV === 'development'
 		});
 	}
-		/* Get the list of included packages */
+	/* Get the list of included packages */
 	get includedPackages() {
 		return [].map(pkg => fs.realpathSync(path.join(npmBase, pkg)));
 	}
-		/*  Set the config data */
+	/*  Set the config data */
 	set config(data) {
 		this._config = Object.assign({}, this.defaultSettings, data);
 		return this._config;
 	}
-		/*  Get the global config */
+	/*  Get the global config */
 	get config() {
 		return this._config;
 	}
-		/*  Get the environment name */
+	/*  Get the environment name */
 	get env() {
 		return 'dev';
 	}
-		/* Get the absolute path to src directory */
+	/* Get the absolute path to src directory */
 	get srcPathAbsolute() {
 		return path.resolve('./src');
 	}
-		/* Get the absolute path to tests directory */
+	/* Get the absolute path to tests directory */
 	get testPathAbsolute() {
 		return path.resolve('./test');
 	}
@@ -49,21 +50,21 @@ class WebpackBaseConfig {
 	}
 	get projectsEntryObject() {
 		return {
-				resume: [
-					'./resume/index.js'
-				],
-				exampleApp: [
-					'./projects/exampleApp/index.js'
-				],
-				githubApp: [
-					'./projects/githubApp/index.js'
-				],
-				findTheBugApp: [
-					'./projects/findTheBugApp/index.js'
-				]
-			}
+			resume: [
+				'./resume/index.js'
+			],
+			exampleApp: [
+				'./projects/exampleApp/index.js'
+			],
+			githubApp: [
+				'./projects/githubApp/index.js'
+			],
+			findTheBugApp: [
+				'./projects/findTheBugApp/index.js'
+			]
+		};
 	}
-		/* Get the default settings */
+	/* Get the default settings */
 	get defaultSettings() {
 		const cssModulesQuery = {
 			modules: true,
@@ -122,12 +123,12 @@ class WebpackBaseConfig {
 					use: this._extractSass.extract({
 						use: [{
 							loader: 'css-loader',
-							options: {sourceMap: false, importLoaders: 1, devtool: 'eval'}
+							options: { sourceMap: false, importLoaders: 1, devtool: 'eval' }
 						}, {
 							loader: 'sass-loader',
-							options: {sourceMap: true}
+							options: { sourceMap: true }
 						}],
-						fallback: 'style-loader',
+						fallback: 'style-loader'
 					})
 				}, {
 					test: /\.cssmodule\.(sass|scss|css)$/,
@@ -140,8 +141,8 @@ class WebpackBaseConfig {
 						loader: 'sass-loader'
 					}]
 				},
-				{ test: /\.jpg$/, use: [ "file-loader" ] },
-				{ test: /\.png$/, use: [ "url-loader?mimetype=image/png" ] }
+				{ test: /\.jpg$/, use: ['file-loader'] },
+				{ test: /\.png$/, use: ['url-loader?mimetype=image/png'] }
 				]
 			},
 			plugins: [],

@@ -25,24 +25,24 @@ export class MainLayoutContainer extends Component {
 	}
 
 	videoSearch = (term) => {
-		YTSearch({key: API_KEY, term: term}, (videos) => {
+		YTSearch({ key: API_KEY, term }, (videos) => {
 			this.setState({
-				videos: videos,// {videos} Synthactic sugar for this.setState({ videos: videos });
+				videos, // {videos} Synthactic sugar for this.setState({ videos: videos });
 				selectedVideo: videos[0]
 			});
 		});
 	}
 
-	render(){
-		const videoSearch = _.debounce(term => { this.videoSearch(term) }, 300);
+	render() {
+		const videoSearch = _.debounce((term) => { this.videoSearch(term); }, 300);
 		return (
 			<Grid container spacing={24}>
 				<Grid item xs={12}>
 					<SearchBar onSearchTermChange={videoSearch} />
 					<VideoDetail video={this.state.selectedVideo} />
 					<VideoList
-						onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-						videos={this.state.videos} 
+						onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+						videos={this.state.videos}
 					/>
 				</Grid>
 			</Grid>

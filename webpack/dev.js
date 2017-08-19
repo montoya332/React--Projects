@@ -4,8 +4,8 @@
 const webpack = require('webpack');
 const WebpackBaseConfig = require('./common');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-class WebpackDevConfig extends WebpackBaseConfig {
 
+class WebpackDevConfig extends WebpackBaseConfig {
 	constructor() {
 		super();
 

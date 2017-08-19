@@ -40,7 +40,7 @@ class WebpackTestConfig extends WebpackBaseConfig {
 				tls: '{}',
 				net: '{}',
 				console: '{}',
-				child_process: '{}',
+				child_process: '{}'
 			},
 			plugins: [
 				new webpack.DefinePlugin({

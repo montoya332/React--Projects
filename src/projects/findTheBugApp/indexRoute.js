@@ -1,6 +1,6 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
-import { Switch,Prompt } from 'react-router';
+import { Switch, Prompt } from 'react-router';
 import App from './app';
 import youTubeContainer from './youTube/container';
 import {
@@ -12,16 +12,14 @@ import {
 
 const history = createHistory();
 
-export const PublicRoutes = ({store}) => (
+export const PublicRoutes = ({ store }) => (
 	<Switch>
 		<Route path="/youTube" component={youTubeContainer} />
 		<Redirect to={{ pathname: '/' }} />
 	</Switch>
-	);
+);
 
-export const AuthPrivateRoutes = withRouter(({ history, store, ...rest }) => {
-	return <App><PublicRoutes key="public" {...rest} /></App>;
-});
+export const AuthPrivateRoutes = withRouter(({ history, store, ...rest }) => <App><PublicRoutes key="public" {...rest} /></App>);
 
 export const AppRoutes = store => (
 	<Router history={history}>
