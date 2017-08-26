@@ -142,7 +142,7 @@ class WebpackBaseConfig {
 					}]
 				},
 				{ test: /\.jpg$/, use: ['file-loader'] },
-				{ test: /\.png$/, use: ['url-loader?mimetype=image/png'] }
+				{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
 				]
 			},
 			plugins: [],
