@@ -13,211 +13,212 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~foundation-sites/scss/components/visibility';
 
 @include foundation-grid;
- @include foundation-visibility-classes;
+@include foundation-visibility-classes;
 
 @page {
-  size: letter;
+	size: letter;
 }
 
 html body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 11pt;
-  color: #3b4047;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 11pt;
+	color: #3b4047;
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }
 .column-nospacer , .columns-nospacer {
-  padding: 0;
+	padding: 0;
 }
 .top-spacer {
-  margin-top: 15px;
+	margin-top: 15px;
 }
 .bottom-spacer {
-  margin-top: 15px;
+	margin-top: 15px;
 }
 .hero-header {
-  font-family: 'Share', cursive;
-  margin-bottom: 1em;
-  color: #3b4047;
+	font-family: 'Share', cursive;
+	margin-bottom: 1em;
+	color: #3b4047;
 }
 
 .hero-header .avatar {
-  text-align: right;
+	text-align: right;
 }
 
 .avatar-thumb {
-  border-radius: 50%;
-  background-color: #eee;
-  line-height: 2;  
-  text-align: center;
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
+	border-radius: 50%;
+	background-color: #eee;
+	line-height: 2;  
+	text-align: center;
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
 }
 .avatar-thumb:after { 
-  content: ""attr(alt)"";
-  display: block;
-  font-size: 12px;
+	content: ""attr(alt)"";
+	display: block;
+	font-size: 12px;
 }
 .avatar-thumb--styled {
-  width: 122px;
-  height: 122px;
-  margin-left: 10px;
+	width: 122px;
+	height: 122px;
+	margin-left: 10px;
+	@media screen and (max-width: 639px) {
+		margin-left: 4px;
+	}
 }
 
-
-
 .hero-title > .title {
-  font-size: 48pt;
-  line-height: 40pt;
+	font-size: 48pt;
+	line-height: 40pt;
 }
 
 .hero-title > .subtitle {
-  font-size: 14pt;
-  font-style: italic;
-  font-weight: normal;
-  color: #6B6B69;
+	font-size: 14pt;
+	font-style: italic;
+	font-weight: normal;
+	color: #6B6B69;
 }
 
 .timeline-item {
-  font-size: 11pt;
-  margin-bottom: 10pt;
-  line-height: 1.4;
+	font-size: 11pt;
+	margin-bottom: 10pt;
+	line-height: 1.4;
 }
 
 .item-dates {
-  font-size: 8pt;
-  text-align: right;
+	font-size: 8pt;
+	text-align: right;
 }
 
 .timeline {
-  margin-bottom: 3em;
+	margin-bottom: 3em;
 }
 
 .timeline-items {
-  position: relative;
-  list-style: none;
-  -webkit-padding-start: 0px;
+	position: relative;
+	list-style: none;
+	-webkit-padding-start: 0px;
 }
 
 .timeline-milestone-icon {
-  position: relative;
-  background: white;
-  margin-top: -4px;
-  margin-left: 30px;
-  padding: 2px 0;
+	position: relative;
+	background: white;
+	margin-top: -4px;
+	margin-left: 30px;
+	padding: 2px 0;
 }
 
 .section-header-title {
-  font-family: 'Share', cursive;
-  font-size: 20pt;
-  margin-bottom: 0.5em;
-  color: #3b4047;
+	font-family: 'Share', cursive;
+	font-size: 20pt;
+	margin-bottom: 0.5em;
+	color: #3b4047;
 }
 
 i {
-  color: #3b4047;
+	color: #3b4047;
 }
 
 .item-header {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12pt;
-  font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
 }
 
 .item-header > * {
-  display: inline;
+	display: inline;
 }
 
 .item-role-at {
-  font-size: 0.8em;
-  font-weight: normal;
+	font-size: 0.8em;
+	font-weight: normal;
 }
 
 .item-location {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-  font-size: 8pt;
-  color: #62666b;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+	font-size: 8pt;
+	color: #62666b;
 }
 .time-line{
-  position: relative;
+	position: relative;
 }
-  .time-line::after{
-    content: "";
-    top: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    border-left: 3px solid #8a8b8a; 
-  }
+.time-line::after{
+	content: "";
+	top: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	border-left: 3px solid #8a8b8a; 
+}
 
 .page-line {
-  top: 0;
-  bottom: 0;
-  left: 285px;
-  position: absolute;
-  border-left: 3px solid #8a8b8a;
+	top: 0;
+	bottom: 0;
+	left: 285px;
+	position: absolute;
+	border-left: 3px solid #8a8b8a;
 }
 
 .icon-item {
-  text-align: center;
+	text-align: center;
 }
 
 .icon-items {
-  margin-bottom: 3em;
+	margin-bottom: 3em;
 }
 
 .icon-item i {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .icon-item > .title {
-  font-size: 8pt;
-  line-height: 1;
+	font-size: 8pt;
+	line-height: 1;
 }
 
 .tidbit {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 .tidbit, .item-details {
-  font-size: 9pt;
+	font-size: 9pt;
 }
 
 .inline-icon-item i {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 .contact-info {
-  text-align: right;
+	text-align: right;
 }
 
 .inline-icon-item {
-  color: #6B6B69;
+	color: #6B6B69;
 }
 
 .inline-icon-item > span {
-  margin-left: 0.5em;
-  font-size: 10pt;
+	margin-left: 0.5em;
+	font-size: 10pt;
 }
 
 .corner-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 1rem;
-  color: #62666b;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 1rem;
+	color: #62666b;
 }
 .icons-container {
-  margin: 3px;
+	margin: 3px;
 }
 .icons-container--small {
-  @media screen and (max-width: 639px) {
-   display: inline-block;
-    width: auto;
-  }
+	@media screen and (max-width: 639px) {
+		display: inline-block;
+		width: auto;
+	}
 }
