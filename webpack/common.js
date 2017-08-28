@@ -41,6 +41,10 @@ class WebpackBaseConfig {
 	get srcPathAbsolute() {
 		return path.resolve('./src');
 	}
+	/* Get the absolute path to src directory */
+	get publicPathAbsolute() {
+		return path.resolve('./public');
+	}
 	/* Get the absolute path to tests directory */
 	get testPathAbsolute() {
 		return path.resolve('./test');
@@ -76,13 +80,11 @@ class WebpackBaseConfig {
 			devtool: 'eval',
 			entry: {},
 			output: {
-				path: path.resolve('./dist/assets'),
-				filename: '[name].bundle.js',
-				publicPath: './assets/'
+				path: path.resolve('./dist'),
+				filename: '[name].bundle.js'
 			},
 			devServer: {
-				contentBase: './src',
-				publicPath: '/assets/',
+				publicPath: '/public',
 				historyApiFallback: true,
 				hot: true,
 				inline: true,
@@ -151,7 +153,8 @@ class WebpackBaseConfig {
 					ReactApp: `${this.srcPathAbsolute}/`,
 					projects: `${this.srcPathAbsolute}/projects/`,
 					utils: `${this.srcPathAbsolute}/utils/`,
-					stylesheets: `${this.stylesPathAbsolute}/`
+					stylesheets: `${this.stylesPathAbsolute}/`,
+					public: `${this.publicPathAbsolute}/`
 				},
 				extensions: ['.js', '.jsx', '.scss'],
 				modules: [
