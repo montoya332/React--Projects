@@ -182,7 +182,7 @@ const HeroTitle = props => (
 	<div className="hero-header">
 		<div className="row">
 			<div className="small-3 medium-4 column column-nospacer avatar">
-				<img width="122" src={'./public/avatar.jpg'} className="avatar-thumb avatar-thumb--styled" />
+				<img width="122" src={'./avatar.jpg'} className="avatar-thumb avatar-thumb--styled" />
 			</div>
 			<div className="small-8 medium-7 column column-nospacer">
 				<div className="hero-title">

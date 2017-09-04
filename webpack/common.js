@@ -84,7 +84,8 @@ class WebpackBaseConfig {
 				filename: '[name].bundle.js'
 			},
 			devServer: {
-				publicPath: '/public',
+				contentBase: './public',
+				// publicPath: '/public/',
 				historyApiFallback: true,
 				hot: true,
 				inline: true,
