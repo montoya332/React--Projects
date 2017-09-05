@@ -32,7 +32,7 @@ const PageContainer = props => (
 		<div className="section">
 			<div className="container">
 				<div className="button-container">
-					<a href="https://montoya332.github.io/React--Projects/" className="btn btn-primary btn-round btn-lg">Resume</a>
+					<a href="https://montoya332.github.io/React--Projects/public/resume.html" className="btn btn-primary btn-round btn-lg">Resume</a>
 					<a href="https://www.github.com/montoya332" className="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Github">
 						<i className="fa fa-github" />
 					</a>
