@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom';
 const PageContainer = props => (
 	<div className="wrapper">
 		<div className="page-header page-header-small" filter-color="orange">
-			<div className="page-header-image" data-parallax="true" style={{ backgroundImage: 'url(./img/classRoom.jpg)' }} />
+			<div className="page-header-image" data-parallax="true" style={{ backgroundImage: 'url(./public/img/classRoom.jpg)' }} />
 			<div className="container">
 				<div className="content-center">
 					<div className="photo-container">
-						<img src="./img/avatar.jpg" alt="" />
+						<img src="./public/img/avatar.jpg" alt="" />
 					</div>
 					<h3 className="title">Arturo Montoya</h3>
 					<p className="category">Engineer</p>
