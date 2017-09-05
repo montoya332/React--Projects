@@ -54,8 +54,11 @@ class WebpackBaseConfig {
 	}
 	get projectsEntryObject() {
 		return {
+			portfolio: [
+				'./portfolio/app.js'
+			],
 			resume: [
-				'./resume/index.js'
+				'./projects/resume/index.js'
 			],
 			exampleApp: [
 				'./projects/exampleApp/index.js'
