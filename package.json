@@ -79,6 +79,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.24.1",
+    "bootstrap": "4.0.0-alpha.6",
     "devicon": "^2.0.0",
     "feathers-authentication": "^1.2.7",
     "font-awesome": "^4.7.0",

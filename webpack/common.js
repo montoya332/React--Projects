@@ -54,8 +54,11 @@ class WebpackBaseConfig {
 	}
 	get projectsEntryObject() {
 		return {
+			portfolio: [
+				'./portfolio/app.js'
+			],
 			resume: [
-				'./resume/index.js'
+				'./projects/resume/index.js'
 			],
 			exampleApp: [
 				'./projects/exampleApp/index.js'
@@ -84,7 +87,8 @@ class WebpackBaseConfig {
 				filename: '[name].bundle.js'
 			},
 			devServer: {
-				publicPath: '/public',
+				contentBase: './public',
+				// publicPath: '/public/',
 				historyApiFallback: true,
 				hot: true,
 				inline: true,
