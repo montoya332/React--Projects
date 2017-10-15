@@ -69,6 +69,10 @@ class WebpackBaseConfig {
 			findTheBugApp: [
 				'./projects/findTheBugApp/index.js'
 			]
+			,
+			chatApp: [
+				'./projects/chatApp/index.js'
+			]
 		};
 	}
 	/* Get the default settings */
