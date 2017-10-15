@@ -13,7 +13,7 @@ const ChatRoom = props => (
 );
 ChatRoom.defaultProps = {
 	messages: [],
-  users: []
+	users: []
 };
 ChatRoom.propTypes = {};
 

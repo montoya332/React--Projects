@@ -25,7 +25,7 @@ const createStoreWithMiddleware = compose(applyMiddleware(
 const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
-		<Provider store={store}>
-			{AppRoutes(store)}
-		</Provider>
+	<Provider store={store}>
+		{AppRoutes(store)}
+	</Provider>
 	, document.querySelector('#react-app'));
