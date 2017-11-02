@@ -89,7 +89,7 @@
     "lodash": "^4.17.4",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-alpha.19",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-autosuggest": "^9.3.1",
     "react-dom": "^15.6.1",
     "react-foundation": "^0.8.2",
