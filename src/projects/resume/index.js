@@ -10,12 +10,21 @@ const Location = {
 };
 
 const jobItems = [
+{
+		title: 'Ascendify',
+		role: 'Full Stack Engineer',
+		location: Location.SF,
+		startDate: 'October 2017',
+		endDate: 'Present',
+		faIcon: 'fa-keyboard-o',
+		details: ''
+	},
 	{
 		title: 'Ascendify',
 		role: 'Frontend Engineer',
 		location: Location.SF,
 		startDate: 'July 2015',
-		endDate: 'Present',
+		endDate: 'October 2017',
 		faIcon: 'fa-keyboard-o',
 		details: 'Planned and architected Front End technology stack (React, BackboneJS ,...)'
 	},
