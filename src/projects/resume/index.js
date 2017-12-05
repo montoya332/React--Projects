@@ -150,10 +150,10 @@ const App = props => (
 					<i className="fa fa-envelope fa-fw" /><a href="mailto:montoya332@live.com" target="_top">montoya332@live.com</a>
 				</div>
 				<div className="inline-icon-item">
-					<i className="fa fa-github fa-fw" /><a href="https://www.github.com/montoya332">github.com/montoya332</a>
+					<i className="fa fa-github fa-fw" /><a href="https://goo.gl/9E8bvn">github.com/montoya332</a>
 				</div>
 				<div className="inline-icon-item">
-					<i className="fa fa-user fa-fw" /><a href="https://www.linkedin.com/in/arturo-montoya-05b69976/">Linkedin</a>
+					<i className="fa fa-user fa-fw" /><a href="https://goo.gl/NNFds1">Linkedin</a>
 				</div>
 			</div>
 		</div>
