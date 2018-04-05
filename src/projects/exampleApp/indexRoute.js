@@ -15,11 +15,12 @@ import {
 
 const history = createHistory();
 
-const App = props => (<div><AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React Projects            </Typography>            </Toolbar></AppBar>{props.children}</div>);
+const App = props => (<div><AppBar position="static"> <Toolbar> <Typography type="title" color="inherit">  React Projects </Typography>  </Toolbar></AppBar>{props.children}</div>);
 
 export const PublicRoutes = ({ store }) => (
 	<Switch>
-		<Route path="/" component={Container} />
+		<Route exact path="/" component={Container} />
+		<Route path="/test" component={App} />
 		<Redirect to={{ pathname: '/' }} />
 	</Switch>
 );
