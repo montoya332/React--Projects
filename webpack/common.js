@@ -68,8 +68,7 @@ class WebpackBaseConfig {
 			],
 			findTheBugApp: [
 				'./projects/findTheBugApp/index.js'
-			]
-			,
+			],
 			chatApp: [
 				'./projects/chatApp/index.js'
 			]
@@ -91,8 +90,10 @@ class WebpackBaseConfig {
 				filename: '[name].bundle.js'
 			},
 			devServer: {
-				contentBase: './public',
-				// publicPath: '/public/',
+				publicPath: '/dist',
+				contentBase: './dist',
+				// // publicPath: '/public/',
+
 				historyApiFallback: true,
 				hot: true,
 				inline: true,

@@ -27,7 +27,7 @@ class MainLayoutContainer extends Component {
 					<DialogTitle>README.md</DialogTitle>
 					<DialogContent>
 						<article itemProp="text">
-							<h1> React--Projects</h1>
+							<h1> React--sdf</h1>
 							<h2> Available Scripts</h2>
 							<p>In the project directory, you can run:</p>
 							<h3> <code>yarn start</code></h3>
