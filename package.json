@@ -79,6 +79,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "feathers-authentication": "^1.2.7",
     "font-awesome": "^4.7.0",
     "foundation-sites": "^6.4.3",
