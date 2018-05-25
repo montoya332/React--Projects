@@ -16,16 +16,15 @@ const history = createBrowserHistory();
 injectTapEventPlugin();
 
 const middleware = [ReduxThunk, ReduxPromise];
-const createStoreWithMiddleware = compose(applyMiddleware(
-	...middleware
-), typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
-	? window.devToolsExtension()
-	: f => f)(createStore);
+const createStoreWithMiddleware = compose(applyMiddleware(...middleware), typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
+  ? window.devToolsExtension()
+  : f => f)(createStore);
 
 const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
-	<Provider store={store}>
-		{AppRoutes(store)}
-	</Provider>
-	, document.querySelector('#react-app'));
+  <Provider store={store}>
+    {AppRoutes(store)}
+  </Provider>
+  , document.querySelector('#react-app')
+);

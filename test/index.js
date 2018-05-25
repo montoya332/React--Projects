@@ -23,17 +23,15 @@ const $ = jquery(global.window);
 
 /* build */
 function renderComponent(ComponentClass, props, state) {
-	injectTapEventPlugin();
+  injectTapEventPlugin();
 
-	const componentInstance = TestUtils.renderIntoDocument(
-		<MuiThemeProvider>
-			<Provider store={createStore(reducers, state)}>
-				<ComponentClass {...props} />
-			</Provider>
-		</MuiThemeProvider>
-	);
+  const componentInstance = TestUtils.renderIntoDocument(<MuiThemeProvider>
+    <Provider store={createStore(reducers, state)}>
+      <ComponentClass {...props} />
+    </Provider>
+                                                         </MuiThemeProvider>);
 
-	return $(ReactDOM.findDOMNode(componentInstance)); // produces HTML
+  return $(ReactDOM.findDOMNode(componentInstance)); // produces HTML
 }
 /* mockStore */
 export const middleware = [ReduxThunk, ReduxPromise];
@@ -41,10 +39,10 @@ export const mockStore = configureStore(middleware);
 
 /* simulating events */
 $.fn.simulate = function (eventName, value) {
-	if (value) {
-		this.val(value);
-	}
-	TestUtils.Simulate[eventName](this[0]);
+  if (value) {
+    this.val(value);
+  }
+  TestUtils.Simulate[eventName](this[0]);
 };
 /* Set up chai-jquery */
 

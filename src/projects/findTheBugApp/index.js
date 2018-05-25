@@ -13,26 +13,25 @@ import 'stylesheets/main.scss';
 import { createMuiTheme } from 'material-ui/styles';
 
 const theme = createMuiTheme({
-	status: {
-		danger: 'orange'
-	}
+  status: {
+    danger: 'orange'
+  }
 });
 
 injectTapEventPlugin();
 
 const middleware = [ReduxThunk, ReduxPromise];
-const createStoreWithMiddleware = compose(applyMiddleware(
-	...middleware
-), typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
-	? window.devToolsExtension()
-	: f => f)(createStore);
+const createStoreWithMiddleware = compose(applyMiddleware(...middleware), typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
+  ? window.devToolsExtension()
+  : f => f)(createStore);
 
 const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
-	<MuiThemeProvider theme={theme}>
-		<Provider store={store}>
-			{AppRoutes(store)}
-		</Provider>
-	</MuiThemeProvider>
-	, document.querySelector('#react-app'));
+  <MuiThemeProvider theme={theme}>
+    <Provider store={store}>
+      {AppRoutes(store)}
+    </Provider>
+  </MuiThemeProvider>
+  , document.querySelector('#react-app')
+);
