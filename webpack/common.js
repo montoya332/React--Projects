@@ -91,8 +91,8 @@ class WebpackBaseConfig {
       },
       devServer: {
         publicPath: '/dist',
-        contentBase: './dist',
-        // // publicPath: '/public/',
+        //contentBase: './dist',
+        //publicPath: '/public/',
 
         historyApiFallback: true,
         hot: true,
