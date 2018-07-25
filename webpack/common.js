@@ -97,7 +97,7 @@ class WebpackBaseConfig {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        port: 8000,
+        port: PORT,
         stats: {
           cached: false,
           colors: true,
