@@ -11,13 +11,22 @@ const Location = {
 
 const jobItems = [
   {
+    title: 'eBay',
+    role: 'Software Engineer',
+    location: Location.SJ,
+    startDate: 'April 2018',
+    endDate: 'Present',
+    faIcon: 'fa-keyboard-o',
+    details: 'Backend For Front end Layer (BFF endpoints using graphql)'
+  },
+  {
     title: 'Ascendify',
     role: 'Full Stack Engineer',
     location: Location.SF,
     startDate: 'October 2017',
-    endDate: 'Present',
+    endDate: 'April 2018',
     faIcon: 'fa-keyboard-o',
-    details: ''
+    details: 'Integration and Migration to new MicroServices'
   },
   {
     title: 'Ascendify',
