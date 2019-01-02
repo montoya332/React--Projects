@@ -79,8 +79,8 @@ class WebpackBaseConfig {
       },
       devServer: {
         publicPath: '/dist',
-        //contentBase: './dist',
-        //publicPath: '/public/',
+        // contentBase: './dist',
+        // publicPath: '/public/',
 
         historyApiFallback: true,
         hot: true,
@@ -109,9 +109,12 @@ class WebpackBaseConfig {
             test: /\.js?$/,
             include: this.srcPathAbsolute,
             loader: 'babel-loader',
-            query: {
-              presets: ['es2015', 'react', 'stage-1']
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
             }
+            // query: {
+            //   presets: ['es2015', 'react', 'stage-1']
+            // }
           },
           {
             test: /\.(js|jsx)$/,
