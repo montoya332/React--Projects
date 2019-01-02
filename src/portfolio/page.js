@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 
 const PageContainer = props => (
   <div className="wrapper">
@@ -7,7 +7,7 @@ const PageContainer = props => (
       <div
         className="page-header-image"
         data-parallax="true"
-        style={{ backgroundImage: "url(./public/img/classRoom.jpg)" }}
+        style={{backgroundImage: 'url(./public/img/classRoom.jpg)'}}
       />
       <div className="container">
         <div className="content-center">
@@ -70,8 +70,7 @@ const PageContainer = props => (
         </div>
         <h3 className="title">About me</h3>
         <h5 className="description">
-          launched a successful web app which is in current use at Hospitals and
-          Clinics in Kansas City (HMS)
+          launched a successful web app which is in current use at Hospitals and Clinics in Kansas City (HMS)
         </h5>
       </div>
     </div>

@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import TextField from "material-ui/TextField";
+import React, {Component} from 'react';
+import TextField from 'material-ui/TextField';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { term: "" };
+    this.state = {term: ''};
   }
 
   handleInputChange(term) {
-    this.setState({ term });
+    this.setState({term});
     this.props.onSearchTermChange(term);
   }
 
@@ -18,7 +18,7 @@ class SearchBar extends Component {
         <TextField
           id="placeholder"
           label="Search"
-          InputProps={{ placeholder: "Type something..." }}
+          InputProps={{placeholder: 'Type something...'}}
           helperText="Full width!!!"
           fullWidth
           margin="normal"

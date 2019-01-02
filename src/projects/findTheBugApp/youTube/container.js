@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
-import Grid from "material-ui/Grid";
-import _ from "lodash";
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import Grid from 'material-ui/Grid';
+import _ from 'lodash';
 
-import YTSearch from "youtube-api-search";
-import SearchBar from "./searchBar";
-import VideoList from "./videoList";
-import VideoDetail from "./videoDetail";
-import "./styles.scss";
+import YTSearch from 'youtube-api-search';
+import SearchBar from './searchBar';
+import VideoList from './videoList';
+import VideoDetail from './videoDetail';
+import './styles.scss';
 
-const API_KEY = "AIzaSyCw0thCQkqCOY99ejMgR72SFOsyqyiosoc";
+const API_KEY = 'AIzaSyCw0thCQkqCOY99ejMgR72SFOsyqyiosoc';
 
 export class MainLayoutContainer extends Component {
   static defaultProps = {};
@@ -21,11 +21,11 @@ export class MainLayoutContainer extends Component {
       videos: [],
       selectedVideo: null
     };
-    this.videoSearch("computer science");
+    this.videoSearch('computer science');
   }
 
   videoSearch = term => {
-    YTSearch({ key: API_KEY, term }, videos => {
+    YTSearch({key: API_KEY, term}, videos => {
       this.setState({
         videos, // {videos} Synthactic sugar for this.setState({ videos: videos });
         selectedVideo: videos[0]
@@ -42,10 +42,7 @@ export class MainLayoutContainer extends Component {
         <Grid item xs={12}>
           <SearchBar onSearchTermChange={videoSearch} />
           <VideoDetail video={this.state.selectedVideo} />
-          <VideoList
-            onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
-            videos={this.state.videos}
-          />
+          <VideoList onVideoSelect={selectedVideo => this.setState({selectedVideo})} videos={this.state.videos} />
         </Grid>
       </Grid>
     );

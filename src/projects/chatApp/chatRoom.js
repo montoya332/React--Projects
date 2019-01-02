@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ItemTile = item => (
   <li>
@@ -8,9 +8,7 @@ const ItemTile = item => (
 const ChatRoom = props => (
   <section className="block-list">
     <header>In This Room</header>
-    <ul>
-      {props.users.map((item, index) => <ItemTile key={index} {...item} />)}
-    </ul>
+    <ul>{props.users.map((item, index) => <ItemTile key={index} {...item} />)}</ul>
   </section>
 );
 ChatRoom.defaultProps = {

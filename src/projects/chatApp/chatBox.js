@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const MessageTile = item => (
   <div>
@@ -11,9 +11,7 @@ const MessageTile = item => (
   </div>
 );
 const ChatBox = props => (
-  <div className="grid-content">
-    {props.messages.map((item, index) => <MessageTile key={index} {...item} />)}
-  </div>
+  <div className="grid-content">{props.messages.map((item, index) => <MessageTile key={index} {...item} />)}</div>
 );
 ChatBox.defaultProps = {
   messages: [],

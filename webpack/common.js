@@ -1,23 +1,23 @@
 /*  Webpack configuration */
 const PORT = 8081;
-const path = require("path");
-const webpack = require("webpack");
-const fs = require("fs");
+const path = require('path');
+const webpack = require('webpack');
+const fs = require('fs');
 
-const assetPath = "/assets/";
-const absolutePath = path.join(__dirname, "build", assetPath);
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const assetPath = '/assets/';
+const absolutePath = path.join(__dirname, 'build', assetPath);
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const npmBase = path.join(__dirname, "../node_modules");
-const projectsBase = path.join(__dirname, "../src/projects");
+const npmBase = path.join(__dirname, '../node_modules');
+const projectsBase = path.join(__dirname, '../src/projects');
 
 class WebpackBaseConfig {
   constructor() {
     this._config = {};
     this._extractSass = new ExtractTextPlugin({
-      filename: "[name].bundle.css",
+      filename: '[name].bundle.css',
       allChunks: true,
-      disable: process.env.NODE_ENV === "development"
+      disable: process.env.NODE_ENV === 'development'
     });
   }
   /* Get the list of included packages */
@@ -35,31 +35,31 @@ class WebpackBaseConfig {
   }
   /*  Get the environment name */
   get env() {
-    return "dev";
+    return 'dev';
   }
   /* Get the absolute path to src directory */
   get srcPathAbsolute() {
-    return path.resolve("./src");
+    return path.resolve('./src');
   }
   /* Get the absolute path to src directory */
   get publicPathAbsolute() {
-    return path.resolve("./public");
+    return path.resolve('./public');
   }
   /* Get the absolute path to tests directory */
   get testPathAbsolute() {
-    return path.resolve("./test");
+    return path.resolve('./test');
   }
   get stylesPathAbsolute() {
-    return path.resolve("./stylesheets");
+    return path.resolve('./stylesheets');
   }
   get projectsEntryObject() {
     return {
-      portfolio: ["./portfolio/app.js"],
-      resume: ["./projects/resume/index.js"],
-      exampleApp: ["./projects/exampleApp/index.js"],
-      githubApp: ["./projects/githubApp/index.js"],
-      findTheBugApp: ["./projects/findTheBugApp/index.js"],
-      chatApp: ["./projects/chatApp/index.js"]
+      portfolio: ['./portfolio/app.js'],
+      resume: ['./projects/resume/index.js'],
+      exampleApp: ['./projects/exampleApp/index.js'],
+      githubApp: ['./projects/githubApp/index.js'],
+      findTheBugApp: ['./projects/findTheBugApp/index.js'],
+      chatApp: ['./projects/chatApp/index.js']
     };
   }
   /* Get the default settings */
@@ -67,18 +67,18 @@ class WebpackBaseConfig {
     const cssModulesQuery = {
       modules: true,
       importLoaders: 1,
-      localIdentName: "[name]-[local]-[hash:base64:5]"
+      localIdentName: '[name]-[local]-[hash:base64:5]'
     };
     return {
       context: this.srcPathAbsolute,
-      devtool: "eval",
+      devtool: 'eval',
       entry: {},
       output: {
-        path: path.resolve("./dist"),
-        filename: "[name].bundle.js"
+        path: path.resolve('./dist'),
+        filename: '[name].bundle.js'
       },
       devServer: {
-        publicPath: "/dist",
+        publicPath: '/dist',
         //contentBase: './dist',
         //publicPath: '/public/',
 
@@ -105,12 +105,12 @@ class WebpackBaseConfig {
       module: {
         rules: [
           {
-            enforce: "pre",
+            enforce: 'pre',
             test: /\.js?$/,
             include: this.srcPathAbsolute,
-            loader: "babel-loader",
+            loader: 'babel-loader',
             query: {
-              presets: ["es2015", "react", "stage-1"]
+              presets: ['es2015', 'react', 'stage-1']
             }
           },
           {
@@ -122,40 +122,40 @@ class WebpackBaseConfig {
             use: this._extractSass.extract({
               use: [
                 {
-                  loader: "css-loader",
+                  loader: 'css-loader',
                   options: {
                     sourceMap: false,
                     importLoaders: 1,
-                    devtool: "eval"
+                    devtool: 'eval'
                   }
                 },
                 {
-                  loader: "sass-loader",
-                  options: { sourceMap: true }
+                  loader: 'sass-loader',
+                  options: {sourceMap: true}
                 }
               ],
-              fallback: "style-loader"
+              fallback: 'style-loader'
             })
           },
           {
             test: /\.cssmodule\.(sass|scss|css)$/,
             loaders: [
               {
-                loader: "style-loader"
+                loader: 'style-loader'
               },
               {
-                loader: "css-loader",
+                loader: 'css-loader',
                 query: cssModulesQuery
               },
               {
-                loader: "sass-loader"
+                loader: 'sass-loader'
               }
             ]
           },
-          { test: /\.jpg$/, use: ["file-loader"] },
+          {test: /\.jpg$/, use: ['file-loader']},
           {
             test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-            loader: "url-loader?limit=100000"
+            loader: 'url-loader?limit=100000'
           }
         ]
       },
@@ -168,8 +168,8 @@ class WebpackBaseConfig {
           stylesheets: `${this.stylesPathAbsolute}/`,
           public: `${this.publicPathAbsolute}/`
         },
-        extensions: [".js", ".jsx", ".scss"],
-        modules: [this.srcPathAbsolute, "node_modules"]
+        extensions: ['.js', '.jsx', '.scss'],
+        modules: [this.srcPathAbsolute, 'node_modules']
       }
     };
   }

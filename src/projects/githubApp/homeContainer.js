@@ -1,16 +1,11 @@
-import React, { Component } from "react";
-import Button from "material-ui/Button";
-import Dialog, {
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions
-} from "material-ui/Dialog";
-import Typography from "material-ui/Typography";
+import React, {Component} from 'react';
+import Button from 'material-ui/Button';
+import Dialog, {DialogTitle, DialogContent, DialogContentText, DialogActions} from 'material-ui/Dialog';
+import Typography from 'material-ui/Typography';
 
 const styles = {
   container: {
-    textAlign: "center",
+    textAlign: 'center',
     paddingTop: 200
   }
 };
@@ -22,8 +17,8 @@ class MainLayoutContainer extends Component {
       open: false
     };
   }
-  handleRequestClose = () => this.setState({ open: false });
-  handleClick = () => this.setState({ open: true });
+  handleRequestClose = () => this.setState({open: false});
+  handleClick = () => this.setState({open: true});
   render() {
     return (
       <div style={styles.container}>
@@ -35,12 +30,12 @@ class MainLayoutContainer extends Component {
               <h2> Available Scripts</h2>
               <p>In the project directory, you can run:</p>
               <h3>
-                {" "}
+                {' '}
                 <code>yarn start</code>
               </h3>
               <p>Runs the app in the development mode.</p>
               <h3>
-                {" "}
+                {' '}
                 <code>yarn run build</code>
               </h3>
               <p>Builds the app for production</p>

@@ -1,15 +1,10 @@
-import React, { Component } from "react";
-import ChatRoom from "./chatRoom";
-import SideBar from "./sideBar";
-import ChatBox from "./chatBox";
-import { createWebsocket } from "./websocket";
+import React, {Component} from 'react';
+import ChatRoom from './chatRoom';
+import SideBar from './sideBar';
+import ChatBox from './chatBox';
+import {createWebsocket} from './websocket';
 
-const users = [
-  { id: 1, name: "Parth" },
-  { id: 2, name: "Karthik" },
-  { id: 3, name: "Dhanashree" },
-  { id: 4, name: "Arturo" }
-];
+const users = [{id: 1, name: 'Parth'}, {id: 2, name: 'Karthik'}, {id: 3, name: 'Dhanashree'}, {id: 4, name: 'Arturo'}];
 class MainLayoutContainer extends Component {
   constructor(props) {
     super(props);
@@ -34,17 +29,17 @@ class MainLayoutContainer extends Component {
     window.socket = this.socket;
     window.that = this;
   }
-  addMessage(text = "") {
+  addMessage(text = '') {
     const messages = this.state.messages;
-    messages.push({ id: messages.length, text });
-    this.setState({ messages });
+    messages.push({id: messages.length, text});
+    this.setState({messages});
   }
   handeSubmit(e) {
     e.preventDefault();
 
     if (this.socket.readyState == WebSocket.OPEN) {
       this.socket.send(this.textInput.value);
-      this.textInput.value = "";
+      this.textInput.value = '';
     }
     return false;
   }
@@ -52,12 +47,7 @@ class MainLayoutContainer extends Component {
     return (
       <div className="grid-frame">
         {false && (
-          <div
-            zf-panel
-            position="left"
-            id="sidebar"
-            className="medium-grid-block collapse medium-3 large-3 vertical"
-          >
+          <div zf-panel position="left" id="sidebar" className="medium-grid-block collapse medium-3 large-3 vertical">
             <SideBar />
           </div>
         )}

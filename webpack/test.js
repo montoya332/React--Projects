@@ -1,7 +1,7 @@
 /* Default test configuration. */
-const WebpackBaseConfig = require("./common");
-const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const WebpackBaseConfig = require('./common');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 class WebpackTestConfig extends WebpackBaseConfig {
   set config(data) {
@@ -16,61 +16,58 @@ class WebpackTestConfig extends WebpackBaseConfig {
   }
 
   get env() {
-    return "test";
+    return 'test';
   }
   constructor() {
     super();
     const cssModulesQuery = {
       modules: true,
       importLoaders: 1,
-      localIdentName: "[name]-[local]-[hash:base64:5]"
+      localIdentName: '[name]-[local]-[hash:base64:5]'
     };
     this.config = {
-      devtool: "inline-source-map",
-      entry: ["./index.js"],
+      devtool: 'inline-source-map',
+      entry: ['./index.js'],
       externals: {
-        cheerio: "window",
-        jsdom: "window",
-        "react/addons": "true",
-        "react/lib/ExecutionEnvironment": "true",
-        "react/lib/ReactContext": "true",
-        fs: "{}",
-        tls: "{}",
-        net: "{}",
-        console: "{}",
-        child_process: "{}"
+        cheerio: 'window',
+        jsdom: 'window',
+        'react/addons': 'true',
+        'react/lib/ExecutionEnvironment': 'true',
+        'react/lib/ReactContext': 'true',
+        fs: '{}',
+        tls: '{}',
+        net: '{}',
+        console: '{}',
+        child_process: '{}'
       },
       plugins: [
         new webpack.DefinePlugin({
-          "process.env.NODE_ENV": '"test"'
+          'process.env.NODE_ENV': '"test"'
         })
       ],
       module: {
         rules: [
           {
             test: /\.(js|jsx)$/,
-            loader: "babel-loader",
-            include: [].concat(this.includedPackages, [
-              this.srcPathAbsolute,
-              this.testPathAbsolute
-            ])
+            loader: 'babel-loader',
+            include: [].concat(this.includedPackages, [this.srcPathAbsolute, this.testPathAbsolute])
           },
           {
             test: /^.((?!cssmodule).)*\.(sass|scss)$/,
-            loader: "null-loader"
+            loader: 'null-loader'
           },
           {
             test: /\.cssmodule\.(sass|scss)$/,
             loaders: [
               {
-                loader: "style-loader"
+                loader: 'style-loader'
               },
               {
-                loader: "css-loader",
+                loader: 'css-loader',
                 query: cssModulesQuery
               },
               {
-                loader: "sass-loader"
+                loader: 'sass-loader'
               }
             ]
           }
