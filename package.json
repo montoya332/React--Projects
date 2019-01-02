@@ -17,6 +17,13 @@
   "author": "Arturo Montoya",
   "license": "",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
     "autoprefixer": "~8.5.1",
     "autoprefixer-loader": "~3.2.0",
     "chai": "~4.1.0",
