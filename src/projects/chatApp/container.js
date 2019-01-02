@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import ChatRoom from './chatRoom';
-import SideBar from './sideBar';
-import ChatBox from './chatBox';
-import { createWebsocket } from './websocket';
+import React, { Component } from "react";
+import ChatRoom from "./chatRoom";
+import SideBar from "./sideBar";
+import ChatBox from "./chatBox";
+import { createWebsocket } from "./websocket";
 
 const users = [
-  { id: 1, name: 'Parth' },
-  { id: 2, name: 'Karthik' },
-  { id: 3, name: 'Dhanashree' },
-  { id: 4, name: 'Arturo' }
+  { id: 1, name: "Parth" },
+  { id: 2, name: "Karthik" },
+  { id: 3, name: "Dhanashree" },
+  { id: 4, name: "Arturo" }
 ];
 class MainLayoutContainer extends Component {
   constructor(props) {
@@ -21,13 +21,20 @@ class MainLayoutContainer extends Component {
   componentDidMount() {
     const self = this;
     this.socket = createWebsocket();
-    this.socket.onmessage = (event) => { console.log(event.data); self.addMessage(event.data); };
-    this.socket.onopen = (event) => { console.log(event); };
-    this.socket.onclose = (event) => { console.log(event); };
+    this.socket.onmessage = event => {
+      console.log(event.data);
+      self.addMessage(event.data);
+    };
+    this.socket.onopen = event => {
+      console.log(event);
+    };
+    this.socket.onclose = event => {
+      console.log(event);
+    };
     window.socket = this.socket;
     window.that = this;
   }
-  addMessage(text = '') {
+  addMessage(text = "") {
     const messages = this.state.messages;
     messages.push({ id: messages.length, text });
     this.setState({ messages });
@@ -37,16 +44,23 @@ class MainLayoutContainer extends Component {
 
     if (this.socket.readyState == WebSocket.OPEN) {
       this.socket.send(this.textInput.value);
-      this.textInput.value = '';
+      this.textInput.value = "";
     }
     return false;
   }
   render() {
     return (
       <div className="grid-frame">
-        {false && (<div zf-panel position="left" id="sidebar" className="medium-grid-block collapse medium-3 large-3 vertical">
-          <SideBar />
-        </div>)}
+        {false && (
+          <div
+            zf-panel
+            position="left"
+            id="sidebar"
+            className="medium-grid-block collapse medium-3 large-3 vertical"
+          >
+            <SideBar />
+          </div>
+        )}
         <div className="grid-block collapse medium-12 large-12 vertical">
           <div id="header" className="shrink collapse grid-content">
             <div className="primary title-bar">
@@ -58,8 +72,17 @@ class MainLayoutContainer extends Component {
               <ChatBox users={users} messages={this.state.messages} />
               <div className="message-input grid-content collapse shrink">
                 <form className="inline-label" onSubmit={this.handeSubmit}>
-                  <input ref={(input) => { this.textInput = input; }} name="text" type="text" placeholder="Message" />
-                  <button type="button" className="button">Send</button>
+                  <input
+                    ref={input => {
+                      this.textInput = input;
+                    }}
+                    name="text"
+                    type="text"
+                    placeholder="Message"
+                  />
+                  <button type="button" className="button">
+                    Send
+                  </button>
                 </form>
               </div>
             </div>
@@ -68,7 +91,6 @@ class MainLayoutContainer extends Component {
             </div>
           </div>
         </div>
-
       </div>
     );
   }

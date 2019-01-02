@@ -9,6 +9,7 @@
     "lint": "eslint ./src; exit 0",
     "serve:dev": "webpack-dev-server --env dev",
     "serve:dist": "webpack-dev-server --open --env dist -p --progress",
+    "pretty": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' 'test/**/*.{js,jsx,ts,tsx}' 'webpack/**/*.{js,jsx,ts,tsx}'",
     "test": "mocha --compilers js:babel-core/register --require ignore-styles ./test/index.js 'test/**/*.spec.@(js|jsx)'",
     "karma": "NODE_ENV=test karma start; exit 0",
     "test:watch": "npm run test -- --watch"
@@ -44,6 +45,7 @@
     "moment": "~2.18.1",
     "node-sass": "~4.5.3",
     "null-loader": "~0.1.1",
+    "pretty": "^2.0.0",
     "react-addons-test-utils": "~15.6.0",
     "redux-mock-store": "~1.2.3",
     "rimraf": "~2.6.1",

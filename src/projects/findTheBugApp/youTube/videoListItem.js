@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const VideoListItem = ({ video, onVideoSelect }) => {
   // {video} === const video = props.video;

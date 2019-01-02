@@ -1,20 +1,18 @@
-
-
 /*  Dist configuration. Used to build the */
-const webpack = require('webpack');
-const WebpackBaseConfig = require('./common');
+const webpack = require("webpack");
+const WebpackBaseConfig = require("./common");
 
 class WebpackDistConfig extends WebpackBaseConfig {
   constructor() {
     super();
     this.config = {
       cache: false,
-      devtool: 'source-map',
+      devtool: "source-map",
       entry: this.projectsEntryObject,
       plugins: [
         this._extractSass,
         new webpack.DefinePlugin({
-          'process.env.NODE_ENV': '"production"'
+          "process.env.NODE_ENV": '"production"'
         }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
@@ -30,7 +28,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
    * @return {String} The current environment
    */
   get env() {
-    return 'dist';
+    return "dist";
   }
 }
 

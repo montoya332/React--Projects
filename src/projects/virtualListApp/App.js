@@ -1,8 +1,5 @@
-import React, {
-  Component,
-  PureComponent
-} from 'react';
-import './App.css';
+import React, { Component, PureComponent } from "react";
+import "./App.css";
 
 const MEDIUM_SCREEN = 640;
 const LARGE_SCREEN = 1024;
@@ -27,12 +24,12 @@ class VirtualList extends PureComponent {
     return this.scrollView;
   }
   componentDidMount() {
-    this.scrollView.addEventListener('scroll', this.handleScroll);
-    this.scrollView.addEventListener('resize', this.handleResize);
+    this.scrollView.addEventListener("scroll", this.handleScroll);
+    this.scrollView.addEventListener("resize", this.handleResize);
   }
   componentWillUnmount() {
-    this.scrollView.removeEventListener('scroll', this.handleScroll);
-    this.scrollView.removeEventListener('resize', this.handleResize);
+    this.scrollView.removeEventListener("scroll", this.handleScroll);
+    this.scrollView.removeEventListener("resize", this.handleResize);
   }
   getColumns() {
     const scrollView = this.getScrollView();
@@ -80,7 +77,7 @@ class VirtualList extends PureComponent {
     const style = {
       top,
       left,
-      position: 'absolute',
+      position: "absolute",
       height: this.props.itemHeight,
       width: `${100 / columns}%`
     };
@@ -92,7 +89,7 @@ class VirtualList extends PureComponent {
     const { start, stop } = this.getVisibleRange();
     const columns = this.getColumns();
     const items = [];
-    if (typeof start !== 'undefined' && typeof stop !== 'undefined') {
+    if (typeof start !== "undefined" && typeof stop !== "undefined") {
       for (let index = start; index <= stop; index++) {
         const style = this.getItemStyles(index);
         items.push(renderItem({ index, style, columns }));
@@ -102,45 +99,57 @@ class VirtualList extends PureComponent {
     return items;
   }
   render() {
-    const {
-      className
-    } = this.props;
-    const totalHeight = this.props.itemHeight * Math.ceil(this.props.itemCount / this.getColumns());
+    const { className } = this.props;
+    const totalHeight =
+      this.props.itemHeight *
+      Math.ceil(this.props.itemCount / this.getColumns());
     const containerStyle = {
       height: totalHeight,
-      width: 'auto',
-      overflow: 'hidden',
-      position: 'relative'
+      width: "auto",
+      overflow: "hidden",
+      position: "relative"
     };
     return (
-      <div ref={this.myRef} className={className} onScroll={this.handleScroll} style={containerStyle}>
-        { this.renderVisibleItems() }
+      <div
+        ref={this.myRef}
+        className={className}
+        onScroll={this.handleScroll}
+        style={containerStyle}
+      >
+        {this.renderVisibleItems()}
       </div>
     );
   }
 }
 VirtualList.defaultProps = {
-  className: '',
+  className: "",
   itemCount: 0,
   sampleSize: 11,
   itemHeight: 0,
   renderItem: () => {}
 };
 //= ============================================================   Image   ======================================================================
-const Image = (props) => {
+const Image = props => {
   const getSource = () => {
-    if (typeof props.src === 'function') {
+    if (typeof props.src === "function") {
       return props.src(props);
     }
     return props.src;
   };
-  return (<img style={props.style} className={props.className} src={getSource()} alt={props.alt} />);
+  return (
+    <img
+      style={props.style}
+      className={props.className}
+      src={getSource()}
+      alt={props.alt}
+    />
+  );
 };
 Image.defaultProps = {
   style: {},
-  className: '',
-  alt: '',
-  src: ''
+  className: "",
+  alt: "",
+  src: ""
 };
 //= ============================================================   VirtualImageList   ======================================================================
 class VirtualImageList extends Component {
@@ -153,14 +162,16 @@ class VirtualImageList extends Component {
     return start + intervals * index;
   }
   getImageSource(id) {
-    return '/giovanni.jpg';
+    return "/giovanni.jpg";
     // return `${this.props.baseUrl}${id}`;
   }
 
   renderImage({ index, style }) {
     const id = this.getImageId(index);
     const src = this.getImageSource(id);
-    return (<Image key={id} style={style} className="image-placeholder" src={src} />);
+    return (
+      <Image key={id} style={style} className="image-placeholder" src={src} />
+    );
   }
   render() {
     const { itemCount, itemHeight, sampleSize } = this.props;
@@ -180,12 +191,9 @@ VirtualImageList.defaultProps = {
   start: 0,
   itemHeight: 480,
   itemCount: 6003,
-  baseUrl: ''
+  baseUrl: ""
 };
 
 export default VirtualImageList;
 
-ReactDOM.render(
-  <VirtualImageList />,
-  document.querySelector('#react-app')
-);
+ReactDOM.render(<VirtualImageList />, document.querySelector("#react-app"));
