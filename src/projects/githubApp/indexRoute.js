@@ -1,9 +1,9 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import {Switch, Prompt} from 'react-router';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import HomeContainer from './homeContainer';
 import AlgorithmContainer from './algorithm/container';
 import ticTacToeContainer from './ticTacToe/container';

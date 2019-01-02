@@ -1,9 +1,9 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import {Switch} from 'react-router';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import Container from './container';
 
 import {BrowserRouter as Router, Route, Redirect, withRouter} from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import ReduxPromise from 'redux-promise';
@@ -10,7 +10,7 @@ import reducers from './rootReducer';
 import routes, {AppRoutes} from './indexRoute';
 import createBrowserHistory from 'history/createBrowserHistory';
 import 'stylesheets/main.scss';
-import {createMuiTheme} from 'material-ui/styles';
+import {createMuiTheme} from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   status: {

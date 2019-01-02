@@ -110,8 +110,12 @@ class WebpackBaseConfig {
             include: this.srcPathAbsolute,
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-transform-runtime']
             }
+            // options: {
+            //   presets: ['@babel/preset-env', '@babel/preset-react']
+            // }
             // query: {
             //   presets: ['es2015', 'react', 'stage-1']
             // }

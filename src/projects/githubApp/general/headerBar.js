@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import {List, ListItem} from 'material-ui/List';
+import AppBar from '@material-ui/core/AppBar';
+import Drawer from '@material-ui/core/Drawer';
+import {List, ListItem} from '@material-ui/core/List';
 import {list} from 'ReactApp/stubData/tabData';
 
 export default class Navigation extends Component {

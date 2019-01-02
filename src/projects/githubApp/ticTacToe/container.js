@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Grid from 'material-ui/Grid';
-import {Clear, PanoramaFishEye} from 'material-ui-icons';
+import Grid from '@material-ui/core/Grid';
+import {Clear, PanoramaFishEye} from '@material-ui/icons';
 import _ from 'lodash';
 
 export class MainLayoutContainer extends Component {

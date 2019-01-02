@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Button from 'material-ui/Button';
-import Dialog, {DialogTitle, DialogContent, DialogContentText, DialogActions} from 'material-ui/Dialog';
-import Typography from 'material-ui/Typography';
+import Button from '@material-ui/core/Button';
+import Dialog, {DialogTitle, DialogContent, DialogContentText, DialogActions} from '@material-ui/core/Dialog';
+import Typography from '@material-ui/core/Typography';
 
 const styles = {
   container: {
