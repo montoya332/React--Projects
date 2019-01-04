@@ -14,7 +14,7 @@ const PageContainer = props => (
             <img src="./public/img/avatar.jpg" alt="" />
           </div>
           <h3 className="title">Arturo Montoya</h3>
-          <p className="category" style={{ marginTop: 0 }}>Engineer</p>
+          <p className="category">Engineer</p>
           <div className="content">
             <div className="social-description">
               <h2>4</h2>
