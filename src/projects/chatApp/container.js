@@ -1,10 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ChatRoom from './chatRoom';
 import SideBar from './sideBar';
 import ChatBox from './chatBox';
-import {createWebsocket} from './websocket';
+import { createWebsocket } from './websocket';
 
-const users = [{id: 1, name: 'Parth'}, {id: 2, name: 'Karthik'}, {id: 3, name: 'Dhanashree'}, {id: 4, name: 'Arturo'}];
+const users = [
+  { id: 1, name: 'Parth' },
+  { id: 2, name: 'Karthik' },
+  { id: 3, name: 'Dhanashree' },
+  { id: 4, name: 'Arturo' }
+];
 class MainLayoutContainer extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +36,8 @@ class MainLayoutContainer extends Component {
   }
   addMessage(text = '') {
     const messages = this.state.messages;
-    messages.push({id: messages.length, text});
-    this.setState({messages});
+    messages.push({ id: messages.length, text });
+    this.setState({ messages });
   }
   handeSubmit(e) {
     e.preventDefault();

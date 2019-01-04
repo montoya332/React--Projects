@@ -1,6 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import chai, {expect} from 'chai';
+import { shallow } from 'enzyme';
+import chai, { expect } from 'chai';
 // import App from 'ReactApp/components/app';
 const defaultProps = {};
 describe('App', () => {

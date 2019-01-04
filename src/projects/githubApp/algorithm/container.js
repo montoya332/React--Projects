@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -33,16 +33,16 @@ export class MainLayoutContainer extends Component {
   }
   startBubbleSort() {
     const self = this;
-    this.setState({sort: !this.state.sort});
+    this.setState({ sort: !this.state.sort });
     if (!this.state.sort) {
       this.bubbleSort([...this.state.list]);
     } else {
-      this.setState({activeA: null, activeB: null});
+      this.setState({ activeA: null, activeB: null });
     }
   }
   render() {
-    const {sort} = this.state;
-    const buttonProps = sort ? {color: 'accent'} : {color: 'primary'};
+    const { sort } = this.state;
+    const buttonProps = sort ? { color: 'accent' } : { color: 'primary' };
     const buttonText = sort ? 'Stop' : 'Start';
     return (
       <Grid container gutter={24}>
@@ -56,7 +56,7 @@ export class MainLayoutContainer extends Component {
         <Grid item xs={10}>
           {this.state.list.map(key => {
             const activeColor = this.state.activeA === key || this.state.activeB === key;
-            const buttonProps = activeColor ? {color: 'accent'} : {};
+            const buttonProps = activeColor ? { color: 'accent' } : {};
             return (
               <Button key={key} raised {...buttonProps}>
                 {' '}

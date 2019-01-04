@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import Dialog, {DialogTitle, DialogContent, DialogContentText, DialogActions} from '@material-ui/core/Dialog';
+import Dialog, { DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
-import List, {ListItem, ListItemIcon, ListItemText} from '@material-ui/core/List';
+import List, { ListItem, ListItemIcon, ListItemText } from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class AppLayoutContainer extends Component {
   constructor(props) {
@@ -17,11 +17,11 @@ class AppLayoutContainer extends Component {
       openDrawer: false
     };
   }
-  handleToggle = () => this.setState({openDrawer: !this.state.openDrawer});
-  handleClose = () => this.setState({openDrawer: false});
+  handleToggle = () => this.setState({ openDrawer: !this.state.openDrawer });
+  handleClose = () => this.setState({ openDrawer: false });
   handleTouchTap = (e, item = {}) => {
     if (item.href) {
-      this.props.history.push({pathname: item.href});
+      this.props.history.push({ pathname: item.href });
     }
   };
   renderListItem = (item, index) => (

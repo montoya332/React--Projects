@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
-import {Clear, PanoramaFishEye} from '@material-ui/icons';
+import { Clear, PanoramaFishEye } from '@material-ui/icons';
 import _ from 'lodash';
 
 export class MainLayoutContainer extends Component {
@@ -47,7 +47,7 @@ export class MainLayoutContainer extends Component {
   }
   render() {
     return (
-      <Grid container gutter={24} style={{paddingTop: '20px'}}>
+      <Grid container gutter={24} style={{ paddingTop: '20px' }}>
         <Grid item xs={3} />
         <Grid item xs={6}>
           {this.renderBoard()}

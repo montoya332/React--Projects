@@ -81,7 +81,6 @@ class WebpackBaseConfig {
         publicPath: '/dist',
         // contentBase: './dist',
         // publicPath: '/public/',
-
         historyApiFallback: true,
         hot: true,
         inline: true,
@@ -113,12 +112,6 @@ class WebpackBaseConfig {
               presets: ['@babel/preset-env'],
               plugins: ['@babel/plugin-transform-runtime']
             }
-            // options: {
-            //   presets: ['@babel/preset-env', '@babel/preset-react']
-            // }
-            // query: {
-            //   presets: ['es2015', 'react', 'stage-1']
-            // }
           },
           {
             test: /\.(js|jsx)$/,
@@ -138,7 +131,7 @@ class WebpackBaseConfig {
                 },
                 {
                   loader: 'sass-loader',
-                  options: {sourceMap: true}
+                  options: { sourceMap: true }
                 }
               ],
               fallback: 'style-loader'
@@ -159,7 +152,7 @@ class WebpackBaseConfig {
               }
             ]
           },
-          {test: /\.jpg$/, use: ['file-loader']},
+          { test: /\.jpg$/, use: ['file-loader'] },
           {
             test: /\.(png|woff|woff2|eot|ttf|svg)$/,
             loader: 'url-loader?limit=100000'

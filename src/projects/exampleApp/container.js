@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import Dialog, {DialogTitle, DialogContent, DialogContentText, DialogActions} from '@material-ui/core/Dialog';
+import Dialog, { DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core/Dialog';
 import Typography from '@material-ui/core/Typography';
 
 const styles = {
@@ -17,8 +17,8 @@ class MainLayoutContainer extends Component {
       open: false
     };
   }
-  handleRequestClose = () => this.setState({open: false});
-  handleClick = () => this.setState({open: true});
+  handleRequestClose = () => this.setState({ open: false });
+  handleClick = () => this.setState({ open: true });
 
   render() {
     return (

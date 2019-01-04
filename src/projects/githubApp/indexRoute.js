@@ -1,13 +1,13 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
-import {Switch, Prompt} from 'react-router';
+import { Switch, Prompt } from 'react-router';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import HomeContainer from './homeContainer';
 import AlgorithmContainer from './algorithm/container';
 import ticTacToeContainer from './ticTacToe/container';
-import {BrowserRouter as Router, Route, Redirect, withRouter} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, withRouter } from 'react-router-dom';
 
 const history = createHistory();
 
@@ -27,12 +27,12 @@ const App = props => (
   </div>
 );
 
-export const PublicRoutes = ({store}) => (
+export const PublicRoutes = ({ store }) => (
   <Switch>
     <Route exact path="/" component={HomeContainer} />
     <Route path="/algorithm" component={AlgorithmContainer} />
     <Route path="/ticTacToe" component={ticTacToeContainer} />
-    <Redirect to={{pathname: '/'}} />
+    <Redirect to={{ pathname: '/' }} />
   </Switch>
 );
 
@@ -42,7 +42,7 @@ export const PrivateRoutes = props => (
   </Switch>
 );
 
-export const AuthPrivateRoutes = withRouter(({history, store, ...rest}) => {
+export const AuthPrivateRoutes = withRouter(({ history, store, ...rest }) => {
   const signedInUser = false;
   const appRoutes = [<PublicRoutes key="public" {...rest} />];
   // if (signedInUser) {

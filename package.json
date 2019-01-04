@@ -7,7 +7,7 @@
     "dist": "npm run clean && npm run copy && webpack --progress --bail --env dist -p",
     "build": "webpack -p --progress",
     "lint": "eslint ./src; exit 0",
-    "serve:dev": "webpack-dev-server --env dev",
+    "serve:dev": "webpack-dev-server -d --env dev",
     "serve:dist": "webpack-dev-server --open --env dist -p --progress",
     "pretty": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' 'test/**/*.{js,jsx,ts,tsx}' 'webpack/**/*.{js,jsx,ts,tsx}'",
     "test": "mocha --compilers js:@babel/register --require ignore-styles ./test/index.js 'test/**/*.spec.@(js|jsx)'",

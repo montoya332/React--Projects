@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './styles.scss';
 
@@ -208,7 +208,7 @@ const Timeline = props => (
 );
 
 const TimelineItem = props => {
-  const {item, pageLine} = props;
+  const { item, pageLine } = props;
   // time-line
   return (
     <li className={`timeline-item ${pageLine && ''}`}>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 const PageContainer = props => (
@@ -7,7 +7,7 @@ const PageContainer = props => (
       <div
         className="page-header-image"
         data-parallax="true"
-        style={{backgroundImage: 'url(./public/img/classRoom.jpg)'}}
+        style={{ backgroundImage: 'url(./public/img/classRoom.jpg)' }}
       />
       <div className="container">
         <div className="content-center">
