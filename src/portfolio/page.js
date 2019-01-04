@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 const PageContainer = props => (
   <div className="wrapper">
@@ -15,14 +14,14 @@ const PageContainer = props => (
             <img src="./public/img/avatar.jpg" alt="" />
           </div>
           <h3 className="title">Arturo Montoya</h3>
-          <p className="category">Engineer</p>
+          <p className="category" style={{ marginTop: 0 }}>Engineer</p>
           <div className="content">
             <div className="social-description">
-              <h2>3</h2>
+              <h2>4</h2>
               <p>Years Experience</p>
             </div>
             <div className="social-description">
-              <h2>2</h2>
+              <h2>1</h2>
               <p>Current Position</p>
             </div>
             <div className="social-description">
