@@ -17,7 +17,7 @@ class WebpackBaseConfig {
     this._extractSass = new ExtractTextPlugin({
       filename: '[name].bundle.css',
       allChunks: true,
-      disable: process.env.NODE_ENV === 'development'
+      disable: this.env === 'development'
     });
   }
   /* Get the list of included packages */
@@ -35,7 +35,11 @@ class WebpackBaseConfig {
   }
   /*  Get the environment name */
   get env() {
-    return 'dev';
+    const envHash = {
+      dev: 'development',
+      test: 'test'
+    };
+    return envHash[process.env.NODE_ENV] || 'production';
   }
   /* Get the absolute path to src directory */
   get srcPathAbsolute() {
@@ -76,6 +80,10 @@ class WebpackBaseConfig {
       output: {
         path: path.resolve('./dist'),
         filename: '[name].bundle.js'
+      },
+      optimization: {
+        usedExports: true,
+        minimize: this.env === 'development'
       },
       devServer: {
         publicPath: '/dist',

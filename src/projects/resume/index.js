@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.scss';
 
@@ -207,7 +207,7 @@ const Timeline = props => (
   </div>
 );
 
-const TimelineItem = props => {
+const TimelineItem = (props) => {
   const { item, pageLine } = props;
   // time-line
   return (
@@ -252,7 +252,7 @@ const TimelineHeader = props => (
   </div>
 );
 
-const TimelineMilestoneIcon = props => {
+const TimelineMilestoneIcon = (props) => {
   const stackClassName = props.isLarge ? 'fa-stack fa-lg' : 'fa-stack';
   // timeline-milestone-icon
   return (

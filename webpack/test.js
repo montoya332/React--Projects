@@ -10,13 +10,8 @@ class WebpackTestConfig extends WebpackBaseConfig {
     this._config = Object.assign({}, baseSettings, data);
     return this._config;
   }
-
   get config() {
     return super.config;
-  }
-
-  get env() {
-    return 'test';
   }
   constructor() {
     super();
@@ -42,7 +37,7 @@ class WebpackTestConfig extends WebpackBaseConfig {
       },
       plugins: [
         new webpack.DefinePlugin({
-          'process.env.NODE_ENV': '"test"'
+          'process.env.NODE_ENV': this.env || '"test"'
         })
       ],
       module: {
