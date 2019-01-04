@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Page from './page';
 import './styles.scss';
@@ -11,7 +11,4 @@ const App = props => (
   </div>
 );
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('#react-app')
-);
+ReactDOM.render(<App />, document.querySelector('#react-app'));

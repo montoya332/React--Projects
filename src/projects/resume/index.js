@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './styles.scss';
 
@@ -67,14 +67,14 @@ const jobItems = [
 ];
 const educationItems = [
   {
-    title: 'Master\'s degree, Software Engineering',
+    title: "Master's degree, Software Engineering",
     location: 'San Jose State University',
     startDate: '2017',
     endDate: 'Present',
     faIcon: 'fa-graduation-cap'
   },
   {
-    title: 'Bachelor\'s degree, Computer Engineering',
+    title: "Bachelor's degree, Computer Engineering",
     location: 'San Jose State University',
     startDate: '2011',
     endDate: '2014',
@@ -95,7 +95,8 @@ const projectItems = [
     startDate: 'September 2013',
     endDate: 'May 2014',
     faIcon: 'fa-keyboard-o',
-    details: 'The main objective of this project is to create an automated process such that attendees at an event can check in on the fly and provide event organizers with real time analytics.'
+    details:
+      'The main objective of this project is to create an automated process such that attendees at an event can check in on the fly and provide event organizers with real time analytics.'
   }
 ];
 
@@ -145,52 +146,37 @@ const App = props => (
   <div className="container top-spacer">
     <div className="row">
       <div className="medium-7 column">
-        <HeroTitle
-          title="Arturo Montoya"
-          subtitle="Work smarter, not harder"
-          avatarSrc="./img/avatar.jpg"
-        />
+        <HeroTitle title="Arturo Montoya" subtitle="Work smarter, not harder" avatarSrc="./img/avatar.jpg" />
       </div>
       <div className="medium-4 column contact-info column-nospacer">
         <div className="inline-icon-item">
-          <i className="fa fa-mobile fa-fw" /><a href="tel:650-814-7939">(650) 814-7939</a>
+          <i className="fa fa-mobile fa-fw" />
+          <a href="tel:650-814-7939">(650) 814-7939</a>
         </div>
         <div className="inline-icon-item">
-          <i className="fa fa-envelope fa-fw" /><a href="mailto:montoya332@live.com" target="_top">montoya332@live.com</a>
+          <i className="fa fa-envelope fa-fw" />
+          <a href="mailto:montoya332@live.com" target="_top">
+            montoya332@live.com
+          </a>
         </div>
         <div className="inline-icon-item">
-          <i className="fa fa-github fa-fw" /><a href="https://goo.gl/9E8bvn">github.com/montoya332</a>
+          <i className="fa fa-github fa-fw" />
+          <a href="https://goo.gl/9E8bvn">github.com/montoya332</a>
         </div>
         <div className="inline-icon-item">
-          <i className="fa fa-user fa-fw" /><a href="https://goo.gl/NNFds1">Linkedin</a>
+          <i className="fa fa-user fa-fw" />
+          <a href="https://goo.gl/NNFds1">Linkedin</a>
         </div>
       </div>
     </div>
     <div className="row top-spacer">
       <div className="small-12 medium-8 column">
-        <Timeline
-          title="Background"
-          headerIcon="fa-clock-o"
-          items={jobItems}
-          pageLine
-        />
-        <Timeline
-          title="Education"
-          headerIcon="fa-rocket"
-          items={educationItems}
-        />
-        <Timeline
-          title="Projects"
-          headerIcon="fa-rocket"
-          items={projectItems}
-        />
+        <Timeline title="Background" headerIcon="fa-clock-o" items={jobItems} pageLine />
+        <Timeline title="Education" headerIcon="fa-rocket" items={educationItems} />
+        <Timeline title="Projects" headerIcon="fa-rocket" items={projectItems} />
       </div>
       <div className="small-12 medium-3 column end">
-        <IconItems
-          title="Skills"
-          faIcon="fa-cube"
-          items={skillsIconItems}
-        />
+        <IconItems title="Skills" faIcon="fa-cube" items={skillsIconItems} />
       </div>
     </div>
   </div>
@@ -214,19 +200,15 @@ const HeroTitle = props => (
 
 const Timeline = props => (
   <div className="timeline">
-    <SectionHeader
-      title={props.title}
-      faIcon={props.headerIcon}
-    />
+    <SectionHeader title={props.title} faIcon={props.headerIcon} />
     <ul className="timeline-items">
       {props.items.map((item, key) => <TimelineItem key={key} item={item} pageLine={props.pageLine} />)}
     </ul>
   </div>
 );
 
-
-const TimelineItem = (props) => {
-  const { item, pageLine } = props;
+const TimelineItem = props => {
+  const {item, pageLine} = props;
   // time-line
   return (
     <li className={`timeline-item ${pageLine && ''}`}>
@@ -239,15 +221,9 @@ const TimelineItem = (props) => {
         </div>
         <div className="small-9 medium-7 column end">
           <TimelineItemHeader {...props} />
-          <div className="item-location hide-for-large">
-            {`${item.startDate} - ${item.endDate}`}
-          </div>
-          <div className="item-location">
-            {item.location}
-          </div>
-          <div className="item-details">
-            {item.details}
-          </div>
+          <div className="item-location hide-for-large">{`${item.startDate} - ${item.endDate}`}</div>
+          <div className="item-location">{item.location}</div>
+          <div className="item-details">{item.details}</div>
         </div>
       </div>
     </li>
@@ -257,22 +233,16 @@ const TimelineItem = (props) => {
 const TimelineItemHeader = props => (
   <div className="item-header">
     {props.item.role && (
-    <div className="item-role">
-      {props.item.role}
-      <span className="item-role-at"> at </span>
-    </div>
-		)}
-    <div className="item-title">
-      {props.item.title}
-    </div>
+      <div className="item-role">
+        {props.item.role}
+        <span className="item-role-at"> at </span>
+      </div>
+    )}
+    <div className="item-title">{props.item.title}</div>
   </div>
 );
 
-const SectionHeader = props => (
-  <div className="section-header-title">
-    {props.title}
-  </div>
-);
+const SectionHeader = props => <div className="section-header-title">{props.title}</div>;
 
 const TimelineHeader = props => (
   <div className="row">
@@ -282,7 +252,7 @@ const TimelineHeader = props => (
   </div>
 );
 
-const TimelineMilestoneIcon = (props) => {
+const TimelineMilestoneIcon = props => {
   const stackClassName = props.isLarge ? 'fa-stack fa-lg' : 'fa-stack';
   // timeline-milestone-icon
   return (
@@ -297,16 +267,13 @@ const TimelineMilestoneIcon = (props) => {
 
 const IconItems = props => (
   <div className="icon-items">
-    <SectionHeader
-      title={props.title}
-      faIcon={props.faIcon}
-    />
+    <SectionHeader title={props.title} faIcon={props.faIcon} />
     <div className="row">
       {props.items.map((item, key) => (
         <div key={key} className="medium-3 large-2 column icons-container icons-container--small end">
           <IconItem {...item} />
         </div>
-			))}
+      ))}
     </div>
   </div>
 );
@@ -318,7 +285,4 @@ const IconItem = props => (
   </div>
 );
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('#react-app')
-);
+ReactDOM.render(<App />, document.querySelector('#react-app'));

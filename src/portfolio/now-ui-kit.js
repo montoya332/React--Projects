@@ -21,8 +21,7 @@ let transparent = true;
 
 const transparentDemo = true;
 const fixedTop = false;
-let $navbar,
-  scroll_distance;
+let $navbar, scroll_distance;
 let navbar_initialized,
   backgroundOrange = false,
   toggle_initialized = false;
@@ -32,7 +31,7 @@ $(document).ready(() => {
   // TODO: $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 
   // Activate Popovers and set color for popovers
-  $('[data-toggle="popover"]').each(function () {
+  $('[data-toggle="popover"]').each(function() {
     color_class = $(this).data('color');
     $(this).popover({
       template: `<div class="popover popover-${color_class}" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>`
@@ -52,14 +51,20 @@ $(document).ready(() => {
     $(window).on('scroll', nowuiKit.checkScrollForTransparentNavbar);
   }
 
-  $('.form-control').on('focus', function () {
-    $(this).parent('.input-group').addClass('input-group-focus');
-  }).on('blur', function () {
-    $(this).parent('.input-group').removeClass('input-group-focus');
-  });
+  $('.form-control')
+    .on('focus', function() {
+      $(this)
+        .parent('.input-group')
+        .addClass('input-group-focus');
+    })
+    .on('blur', function() {
+      $(this)
+        .parent('.input-group')
+        .removeClass('input-group-focus');
+    });
 
   // Activate bootstrapSwitch
-  $('.bootstrap-switch').each(function () {
+  $('.bootstrap-switch').each(function() {
     $this = $(this);
     data_on_label = $this.data('on-label') || '';
     data_off_label = $this.data('off-label') || '';
@@ -81,22 +86,25 @@ $(document).ready(() => {
   //     interval: 4000
   // });
 
-  $('.date-picker').each(function () {
-    $(this).datepicker({
-      templates: {
-        leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
-        rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
-      }
-    }).on('show', function () {
-      $('.datepicker').addClass('open');
+  $('.date-picker').each(function() {
+    $(this)
+      .datepicker({
+        templates: {
+          leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
+          rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
+        }
+      })
+      .on('show', function() {
+        $('.datepicker').addClass('open');
 
-      datepicker_color = $(this).data('datepicker-color');
-      if (datepicker_color.length != 0) {
-        $('.datepicker').addClass(`datepicker-${datepicker_color}`);
-      }
-    }).on('hide', () => {
-      $('.datepicker').removeClass('open');
-    });
+        datepicker_color = $(this).data('datepicker-color');
+        if (datepicker_color.length != 0) {
+          $('.datepicker').addClass(`datepicker-${datepicker_color}`);
+        }
+      })
+      .on('hide', () => {
+        $('.datepicker').removeClass('open');
+      });
   });
 });
 
@@ -104,7 +112,7 @@ $(window).on('resize', () => {
   nowuiKit.initNavbarImage();
 });
 
-$(document).on('click', '.navbar-toggler', function () {
+$(document).on('click', '.navbar-toggler', function() {
   $toggle = $(this);
 
   if (nowuiKit.misc.navbar_menu_visible == 1) {
@@ -119,14 +127,16 @@ $(document).on('click', '.navbar-toggler', function () {
       $toggle.addClass('toggled');
     }, 580);
     div = '<div id="bodyClick"></div>';
-    $(div).appendTo('body').click(() => {
-      $('html').removeClass('nav-open');
-      nowuiKit.misc.navbar_menu_visible = 0;
-      setTimeout(() => {
-        $toggle.removeClass('toggled');
-        $('#bodyClick').remove();
-      }, 550);
-    });
+    $(div)
+      .appendTo('body')
+      .click(() => {
+        $('html').removeClass('nav-open');
+        nowuiKit.misc.navbar_menu_visible = 0;
+        setTimeout(() => {
+          $toggle.removeClass('toggled');
+          $('#bodyClick').remove();
+        }, 550);
+      });
 
     $('html').addClass('nav-open');
     nowuiKit.misc.navbar_menu_visible = 1;
@@ -151,18 +161,22 @@ window.nowuiKit = {
   }, 17),
 
   initNavbarImage() {
-    const $navbar = $('.navbar').find('.navbar-translate').siblings('.navbar-collapse');
+    const $navbar = $('.navbar')
+      .find('.navbar-translate')
+      .siblings('.navbar-collapse');
     const background_image = $navbar.data('nav-image');
 
     if ($(window).width() < 991 || $('body').hasClass('burger-menu')) {
       if (background_image != undefined) {
-        $navbar.css('background', `url('${background_image}')`)
+        $navbar
+          .css('background', `url('${background_image}')`)
           .removeAttr('data-nav-image')
           .css('background-size', 'cover')
           .addClass('has-image');
       }
     } else if (background_image != undefined) {
-      $navbar.css('background', '')
+      $navbar
+        .css('background', '')
         .attr('data-nav-image', `${background_image}`)
         .css('background-size', '')
         .removeClass('has-image');
@@ -195,15 +209,14 @@ window.nowuiKit = {
   }
 };
 
-
 let big_image;
 
 // Javascript just for Demo purpose, remove it from your project
 window.nowuiKitDemo = {
-  checkScrollForParallax: debounce(function () {
+  checkScrollForParallax: debounce(function() {
     const current_scroll = $(this).scrollTop();
 
-    window.oVal = ($(window).scrollTop() / 3);
+    window.oVal = $(window).scrollTop() / 3;
     big_image.css({
       transform: `translate3d(0,${oVal}px,0)`,
       '-webkit-transform': `translate3d(0,${oVal}px,0)`,
@@ -211,7 +224,6 @@ window.nowuiKitDemo = {
       '-o-transform': `translate3d(0,${oVal}px,0)`
     });
   }, 6)
-
 };
 
 // Returns a function, that, as long as it continues to be invoked, will not
@@ -221,7 +233,7 @@ window.nowuiKitDemo = {
 
 function debounce(func, wait, immediate) {
   let timeout;
-  return function () {
+  return function() {
     let context = this,
       args = arguments;
     clearTimeout(timeout);

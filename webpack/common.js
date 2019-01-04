@@ -54,24 +54,12 @@ class WebpackBaseConfig {
   }
   get projectsEntryObject() {
     return {
-      portfolio: [
-        './portfolio/app.js'
-      ],
-      resume: [
-        './projects/resume/index.js'
-      ],
-      exampleApp: [
-        './projects/exampleApp/index.js'
-      ],
-      githubApp: [
-        './projects/githubApp/index.js'
-      ],
-      findTheBugApp: [
-        './projects/findTheBugApp/index.js'
-      ],
-      chatApp: [
-        './projects/chatApp/index.js'
-      ]
+      portfolio: ['./portfolio/app.js'],
+      resume: ['./projects/resume/index.js'],
+      exampleApp: ['./projects/exampleApp/index.js'],
+      githubApp: ['./projects/githubApp/index.js'],
+      findTheBugApp: ['./projects/findTheBugApp/index.js'],
+      chatApp: ['./projects/chatApp/index.js']
     };
   }
   /* Get the default settings */
@@ -91,8 +79,8 @@ class WebpackBaseConfig {
       },
       devServer: {
         publicPath: '/dist',
-        //contentBase: './dist',
-        //publicPath: '/public/',
+        // contentBase: './dist',
+        // publicPath: '/public/',
 
         historyApiFallback: true,
         hot: true,
@@ -115,43 +103,67 @@ class WebpackBaseConfig {
         }
       },
       module: {
-        rules: [{
-          enforce: 'pre',
-          test: /\.js?$/,
-          include: this.srcPathAbsolute,
-          loader: 'babel-loader',
-          query: {
-            presets: ['es2015', 'react', 'stage-1']
+        rules: [
+          {
+            enforce: 'pre',
+            test: /\.js?$/,
+            include: this.srcPathAbsolute,
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-transform-runtime']
+            }
+            // options: {
+            //   presets: ['@babel/preset-env', '@babel/preset-react']
+            // }
+            // query: {
+            //   presets: ['es2015', 'react', 'stage-1']
+            // }
+          },
+          {
+            test: /\.(js|jsx)$/,
+            include: [].concat(this.includedPackages, [this.srcPathAbsolute])
+          },
+          {
+            test: /^.((?!cssmodule).)*\.(sass|scss|css)$/,
+            use: this._extractSass.extract({
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: {
+                    sourceMap: false,
+                    importLoaders: 1,
+                    devtool: 'eval'
+                  }
+                },
+                {
+                  loader: 'sass-loader',
+                  options: {sourceMap: true}
+                }
+              ],
+              fallback: 'style-loader'
+            })
+          },
+          {
+            test: /\.cssmodule\.(sass|scss|css)$/,
+            loaders: [
+              {
+                loader: 'style-loader'
+              },
+              {
+                loader: 'css-loader',
+                query: cssModulesQuery
+              },
+              {
+                loader: 'sass-loader'
+              }
+            ]
+          },
+          {test: /\.jpg$/, use: ['file-loader']},
+          {
+            test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+            loader: 'url-loader?limit=100000'
           }
-        }, {
-          test: /\.(js|jsx)$/,
-          include: [].concat(this.includedPackages, [this.srcPathAbsolute])
-
-        }, {
-          test: /^.((?!cssmodule).)*\.(sass|scss|css)$/,
-          use: this._extractSass.extract({
-            use: [{
-              loader: 'css-loader',
-              options: { sourceMap: false, importLoaders: 1, devtool: 'eval' }
-            }, {
-              loader: 'sass-loader',
-              options: { sourceMap: true }
-            }],
-            fallback: 'style-loader'
-          })
-        }, {
-          test: /\.cssmodule\.(sass|scss|css)$/,
-          loaders: [{
-            loader: 'style-loader'
-          }, {
-            loader: 'css-loader',
-            query: cssModulesQuery
-          }, {
-            loader: 'sass-loader'
-          }]
-        },
-        { test: /\.jpg$/, use: ['file-loader'] },
-        { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
         ]
       },
       plugins: [],
@@ -164,10 +176,7 @@ class WebpackBaseConfig {
           public: `${this.publicPathAbsolute}/`
         },
         extensions: ['.js', '.jsx', '.scss'],
-        modules: [
-          this.srcPathAbsolute,
-          'node_modules'
-        ]
+        modules: [this.srcPathAbsolute, 'node_modules']
       }
     };
   }

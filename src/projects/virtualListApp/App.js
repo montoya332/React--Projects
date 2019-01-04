@@ -1,7 +1,4 @@
-import React, {
-  Component,
-  PureComponent
-} from 'react';
+import React, {Component, PureComponent} from 'react';
 import './App.css';
 
 const MEDIUM_SCREEN = 640;
@@ -46,23 +43,23 @@ class VirtualList extends PureComponent {
   handleResize(e) {
     const containerWidth = this.getScrollView().innerWidth;
     if (containerWidth !== this.state.containerWidth) {
-      this.setState({ containerWidth });
+      this.setState({containerWidth});
     }
     this.handleScroll(e);
   }
   handleScroll(e) {
     const offset = this.getNodeOffset();
     if (offset >= 0 && this.state.offset !== offset) {
-      this.setState({ offset });
+      this.setState({offset});
     }
   }
   getNodeOffset() {
     const itemHeight = this.props.itemHeight;
-    const { scrollY } = this.getScrollView();
+    const {scrollY} = this.getScrollView();
     return Math.floor(scrollY / itemHeight) * this.getColumns();
   }
   getVisibleRange(props = this.props) {
-    const { offset } = this.state;
+    const {offset} = this.state;
     const start = offset;
     let stop = offset + props.sampleSize;
     if (stop >= props.itemCount) {
@@ -88,23 +85,21 @@ class VirtualList extends PureComponent {
     return style;
   }
   renderVisibleItems(props = this.props) {
-    const { renderItem, onItemsRendered } = props;
-    const { start, stop } = this.getVisibleRange();
+    const {renderItem, onItemsRendered} = props;
+    const {start, stop} = this.getVisibleRange();
     const columns = this.getColumns();
     const items = [];
     if (typeof start !== 'undefined' && typeof stop !== 'undefined') {
       for (let index = start; index <= stop; index++) {
         const style = this.getItemStyles(index);
-        items.push(renderItem({ index, style, columns }));
+        items.push(renderItem({index, style, columns}));
       }
-      onItemsRendered && onItemsRendered({ start, stop });
+      onItemsRendered && onItemsRendered({start, stop});
     }
     return items;
   }
   render() {
-    const {
-      className
-    } = this.props;
+    const {className} = this.props;
     const totalHeight = this.props.itemHeight * Math.ceil(this.props.itemCount / this.getColumns());
     const containerStyle = {
       height: totalHeight,
@@ -114,7 +109,7 @@ class VirtualList extends PureComponent {
     };
     return (
       <div ref={this.myRef} className={className} onScroll={this.handleScroll} style={containerStyle}>
-        { this.renderVisibleItems() }
+        {this.renderVisibleItems()}
       </div>
     );
   }
@@ -127,14 +122,14 @@ VirtualList.defaultProps = {
   renderItem: () => {}
 };
 //= ============================================================   Image   ======================================================================
-const Image = (props) => {
+const Image = props => {
   const getSource = () => {
     if (typeof props.src === 'function') {
       return props.src(props);
     }
     return props.src;
   };
-  return (<img style={props.style} className={props.className} src={getSource()} alt={props.alt} />);
+  return <img style={props.style} className={props.className} src={getSource()} alt={props.alt} />;
 };
 Image.defaultProps = {
   style: {},
@@ -149,7 +144,7 @@ class VirtualImageList extends Component {
     this.renderImage = this.renderImage.bind(this);
   }
   getImageId(index) {
-    const { start, intervals } = this.props;
+    const {start, intervals} = this.props;
     return start + intervals * index;
   }
   getImageSource(id) {
@@ -157,13 +152,13 @@ class VirtualImageList extends Component {
     // return `${this.props.baseUrl}${id}`;
   }
 
-  renderImage({ index, style }) {
+  renderImage({index, style}) {
     const id = this.getImageId(index);
     const src = this.getImageSource(id);
-    return (<Image key={id} style={style} className="image-placeholder" src={src} />);
+    return <Image key={id} style={style} className="image-placeholder" src={src} />;
   }
   render() {
-    const { itemCount, itemHeight, sampleSize } = this.props;
+    const {itemCount, itemHeight, sampleSize} = this.props;
     return (
       <VirtualList
         sampleSize={sampleSize}
@@ -185,7 +180,4 @@ VirtualImageList.defaultProps = {
 
 export default VirtualImageList;
 
-ReactDOM.render(
-  <VirtualImageList />,
-  document.querySelector('#react-app')
-);
+ReactDOM.render(<VirtualImageList />, document.querySelector('#react-app'));

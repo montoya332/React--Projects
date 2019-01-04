@@ -1,5 +1,3 @@
-
-
 /*  Dist configuration. Used to build the */
 const webpack = require('webpack');
 const WebpackBaseConfig = require('./common');

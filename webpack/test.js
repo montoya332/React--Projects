@@ -27,9 +27,7 @@ class WebpackTestConfig extends WebpackBaseConfig {
     };
     this.config = {
       devtool: 'inline-source-map',
-      entry: [
-        './index.js'
-      ],
+      entry: ['./index.js'],
       externals: {
         cheerio: 'window',
         jsdom: 'window',
@@ -48,24 +46,32 @@ class WebpackTestConfig extends WebpackBaseConfig {
         })
       ],
       module: {
-        rules: [{
-          test: /\.(js|jsx)$/,
-          loader: 'babel-loader',
-          include: [].concat(this.includedPackages, [this.srcPathAbsolute, this.testPathAbsolute])
-        }, {
-          test: /^.((?!cssmodule).)*\.(sass|scss)$/,
-          loader: 'null-loader'
-        }, {
-          test: /\.cssmodule\.(sass|scss)$/,
-          loaders: [{
-            loader: 'style-loader'
-          }, {
-            loader: 'css-loader',
-            query: cssModulesQuery
-          }, {
-            loader: 'sass-loader'
-          }]
-        }]
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            loader: 'babel-loader',
+            include: [].concat(this.includedPackages, [this.srcPathAbsolute, this.testPathAbsolute])
+          },
+          {
+            test: /^.((?!cssmodule).)*\.(sass|scss)$/,
+            loader: 'null-loader'
+          },
+          {
+            test: /\.cssmodule\.(sass|scss)$/,
+            loaders: [
+              {
+                loader: 'style-loader'
+              },
+              {
+                loader: 'css-loader',
+                query: cssModulesQuery
+              },
+              {
+                loader: 'sass-loader'
+              }
+            ]
+          }
+        ]
       }
     };
   }

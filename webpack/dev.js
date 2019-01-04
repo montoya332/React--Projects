@@ -1,5 +1,3 @@
-
-
 /* Default dev server configuration. */
 const webpack = require('webpack');
 const WebpackBaseConfig = require('./common');
