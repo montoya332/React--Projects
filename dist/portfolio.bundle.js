@@ -84,7 +84,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 20:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10434,11 +10434,10 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ../node_modules/react-dom/index.js
-var react_dom = __webpack_require__(20);
+var react_dom = __webpack_require__(21);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // CONCATENATED MODULE: ./portfolio/page.js
-
 
 
 var page_PageContainer = function PageContainer(props) {
@@ -10470,9 +10469,9 @@ var page_PageContainer = function PageContainer(props) {
     className: "content"
   }, react_default.a.createElement("div", {
     className: "social-description"
-  }, react_default.a.createElement("h2", null, "3"), react_default.a.createElement("p", null, "Years Experience")), react_default.a.createElement("div", {
+  }, react_default.a.createElement("h2", null, "4"), react_default.a.createElement("p", null, "Years Experience")), react_default.a.createElement("div", {
     className: "social-description"
-  }, react_default.a.createElement("h2", null, "2"), react_default.a.createElement("p", null, "Current Position")), react_default.a.createElement("div", {
+  }, react_default.a.createElement("h2", null, "1"), react_default.a.createElement("p", null, "Current Position")), react_default.a.createElement("div", {
     className: "social-description"
   }, react_default.a.createElement("h2", null, "1.5"), react_default.a.createElement("p", null, "Average Tenure")))))), react_default.a.createElement("div", {
     className: "section"

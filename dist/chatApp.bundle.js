@@ -385,7 +385,8 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized;
 
 /***/ }),
-/* 20 */
+/* 20 */,
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -419,7 +420,6 @@ if (true) {
 
 
 /***/ }),
-/* 21 */,
 /* 22 */,
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8174,7 +8174,7 @@ module.exports = function injectTapEventPlugin(strategyOverrides) {
 
   alreadyInjected = true;
 
-  __webpack_require__(20).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.EventPluginHub.injection.injectEventPluginsByName({
+  __webpack_require__(21).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.EventPluginHub.injection.injectEventPluginsByName({
     'TapEventPlugin': __webpack_require__(127)(shouldRejectClick)
   });
 };
@@ -9714,7 +9714,7 @@ module.exports = TouchEventUtils;
 
 
 
-var EventPropagators = __webpack_require__(20).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.EventPropagators;
+var EventPropagators = __webpack_require__(21).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.EventPropagators;
 var TouchEventUtils = __webpack_require__(126);
 var SyntheticEvent = __webpack_require__(125);
 
@@ -10449,7 +10449,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ../node_modules/react-dom/index.js
-var react_dom = __webpack_require__(20);
+var react_dom = __webpack_require__(21);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ../node_modules/react-redux/es/index.js + 23 modules
